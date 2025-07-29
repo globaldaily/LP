@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>刑事事件・少年事件 韓国語専門弁護士 | あいち刑事事件総合法律事務所</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --slate-900: #0f172a;
+            --slate-800: #1e293b;
+            --slate-700: #334155;
+            --slate-600: #475569;
+            --slate-400: #94a3b8;
+            --slate-300: #cbd5e1;
+            --slate-200: #e2e8f0;
+            --slate-100: #f1f5f9;
+            --slate-50: #f8fafc;
+            --white: #ffffff;
+            --amber-600: #d97706;
+            --amber-500: #f59e0b;
+            --amber-400: #fbbf24;
+            --amber-100: #fef3c7;
+            --emerald-600: #059669;
+            --emerald-100: #d1fae5;
+            --blue-600: #2563eb;
+            --blue-100: #dbeafe;
+            --red-600: #dc2626;
+            --gradient-slate: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            --gradient-light: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        body {
+            font-family: 'Inter', 'Noto Sans JP', 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            color: var(--slate-700);
+            background-color: var(--white);
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* Header */
+        .header {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: -0.025em;
+        }
+        
+        .logo-highlight {
+            color: var(--amber-400);
+            font-weight: 700;
+        }
+        
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+        
+        .phone-action {
+            color: var(--amber-400);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .phone-action:hover {
+            color: var(--amber-300);
+        }
+        
+        .lang-selector {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .lang-option {
+            padding: 6px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: transparent;
+            color: var(--white);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        .lang-option.active {
+            background: var(--white);
+            color: var(--slate-900);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: var(--gradient-slate);
+            color: var(--white);
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(245, 158, 11, 0.08) 0%, transparent 50%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -0.025em;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+        
+        .hero-korean {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+        
+        .hero-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 40px;
+        }
+        
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        
+        .feature-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--amber-500);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        
+        .hero-cta {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .cta-primary {
+            background: var(--amber-500);
+            color: var(--slate-900);
+            padding: 18px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .cta-primary:hover {
+            background: var(--amber-400);
+            transform: translateY(-2px);
+        }
+        
+        .cta-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 18px 36px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Office Excellence */
+        .office-excellence {
+            background: var(--white);
+            padding: 80px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--slate-900);
+            margin-bottom: 16px;
+            letter-spacing: -0.025em;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--slate-600);
+            font-weight: 400;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .excellence-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+        }
+        
+        .excellence-card {
+            background: var(--white);
+            padding: 36px;
+            border-radius: 16px;
+            border: 1px solid var(--slate-200);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .excellence-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--amber-500);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .excellence-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .excellence-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .card-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--slate-100);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .excellence-card:hover .card-icon {
+            background: var(--amber-100);
+        }
+        
+        .excellence-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--slate-900);
+            margin-bottom: 12px;
+        }
+        
+        .excellence-card p {
+            color: var(--slate-600);
+            line-height: 1.6;
+        }
+        
+        /* Korean Support */
+        .korean-support {
+            background: var(--slate-50);
+            padding: 80px 0;
+        }
+        
+        .support-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .support-visual {
+            text-align: center;
+        }
+        
+        .support-avatar {
+            width: 240px;
+            height: 280px;
+            background: var(--gradient-slate);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0 auto;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .support-details h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--slate-900);
+            margin-bottom: 20px;
+        }
+        
+        .korean-excellence {
+            background: var(--white);
+            padding: 28px;
+            border-radius: 12px;
+            margin: 24px 0;
+            border: 1px solid var(--slate-200);
+        }
+        
+        .korean-excellence h4 {
+            color: var(--amber-600);
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+        
+        .excellence-list {
+            list-style: none;
+        }
+        
+        .excellence-list li {
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+            font-weight: 500;
+            color: var(--slate-700);
+        }
+        
+        .excellence-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--emerald-600);
+            font-weight: 800;
+        }
+        
+        /* Legal Differences */
+        .legal-differences {
+            background: var(--white);
+            padding: 80px 0;
+        }
+        
+        .differences-showcase {
+            background: var(--slate-50);
+            border-radius: 20px;
+            padding: 48px;
+            margin: 60px 0;
+            border: 1px solid var(--slate-200);
+        }
+        
+        .showcase-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .showcase-badge {
+            background: var(--amber-500);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+        
+        .showcase-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--slate-900);
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 32px;
+            align-items: center;
+        }
+        
+        .country-section {
+            background: var(--white);
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid var(--slate-200);
+        }
+        
+        .country-flag {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+        
+        .country-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--slate-900);
+            margin-bottom: 20px;
+        }
+        
+        .law-point {
+            background: var(--slate-100);
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--slate-700);
+        }
+        
+        .vs-divider {
+            width: 60px;
+            height: 60px;
+            background: var(--slate-700);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 800;
+        }
+        
+        .expert-insight {
+            background: var(--slate-900);
+            color: var(--white);
+            padding: 24px;
+            border-radius: 12px;
+            margin-top: 24px;
+        }
+        
+        .expert-insight h4 {
+            color: var(--amber-400);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .differences-categories {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 60px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 60px;
+        }
+        
+        .category-card {
+            background: var(--white);
+            padding: 32px;
+            border-radius: 16px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid var(--slate-200);
+        }
+        
+        .category-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--amber-500);
+        }
+        
+        .category-icon {
+            font-size: 2rem;
+            margin-bottom: 16px;
+            color: var(--slate-600);
+            font-weight: 900;
+        }
+        
+        .category-card:hover .category-icon {
+            color: var(--amber-500);
+        }
+        
+        .category-card h4 {
+            color: var(--slate-900);
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        
+        .category-card p {
+            color: var(--slate-600);
+            margin-bottom: 16px;
+        }
+        
+        .post-count {
+            background: var(--amber-500);
+            color: var(--white);
+            padding: 6px 16px;
+            border-radius: 16px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        
+        /* Newsletter */
+        .newsletter {
+            background: var(--slate-900);
+            color: var(--white);
+            padding: 60px 0;
+        }
+        
+        .newsletter-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .newsletter h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        
+        .newsletter p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 32px;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: 12px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 1px solid var(--slate-700);
+            border-radius: 50px;
+            background: var(--slate-800);
+            color: var(--white);
+        }
+        
+        .newsletter-input:focus {
+            outline: none;
+            border-color: var(--amber-500);
+        }
+        
+        .newsletter-btn {
+            background: var(--amber-500);
+            color: var(--slate-900);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter-btn:hover {
+            background: var(--amber-400);
+        }
+        
+        /* Practice Areas */
+        .practice-areas {
+            background: var(--slate-50);
+            padding: 80px 0;
+        }
+        
+        .practice-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 24px;
+            margin-top: 60px;
+        }
+        
+        .practice-card {
+            background: var(--white);
+            padding: 36px;
+            border-radius: 16px;
+            border-left: 4px solid var(--amber-500);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid var(--slate-200);
+        }
+        
+        .practice-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .practice-card h3 {
+            color: var(--slate-900);
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .practice-stages {
+            list-style: none;
+        }
+        
+        .practice-stages li {
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+            color: var(--slate-600);
+            font-weight: 500;
+        }
+        
+        .practice-stages li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: var(--amber-500);
+            font-size: 0.7rem;
+        }
+        
+        /* Success Cases */
+        .success-cases {
+            background: var(--white);
+            padding: 80px 0;
+        }
+        
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 60px;
+        }
+        
+        .case-card {
+            background: var(--slate-50);
+            padding: 36px;
+            border-radius: 16px;
+            border: 1px solid var(--slate-200);
+            transition: all 0.3s ease;
+        }
+        
+        .case-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            background: var(--white);
+        }
+        
+        .case-type {
+            background: var(--emerald-600);
+            color: var(--white);
+            padding: 6px 16px;
+            border-radius: 16px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        
+        .case-content {
+            color: var(--slate-600);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .case-result {
+            background: var(--emerald-100);
+            padding: 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            color: var(--emerald-800);
+            border: 1px solid var(--emerald-200);
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: var(--slate-900);
+            color: var(--white);
+            padding: 80px 0;
+        }
+        
+        .contact-form {
+            background: var(--white);
+            color: var(--slate-700);
+            padding: 48px;
+            border-radius: 20px;
+            max-width: 700px;
+            margin: 40px auto 0;
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .form-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--slate-900);
+            margin-bottom: 12px;
+            text-align: center;
+        }
+        
+        .form-subtitle {
+            text-align: center;
+            color: var(--slate-600);
+            margin-bottom: 32px;
+        }
+        
+        .form-group {
+            margin-bottom: 24px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: var(--slate-900);
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--slate-300);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--amber-500);
+        }
+        
+        .form-submit {
+            background: var(--amber-500);
+            color: var(--slate-900);
+            padding: 16px 32px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .form-submit:hover {
+            background: var(--amber-400);
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--slate-800);
+            color: var(--white);
+            padding: 60px 0 40px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+        }
+        
+        .footer-section h4 {
+            color: var(--amber-400);
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section li {
+            margin-bottom: 8px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: var(--amber-400);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-features {
+                grid-template-columns: 1fr;
+                max-width: 300px;
+            }
+            
+            .support-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+            
+            .comparison-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .vs-divider {
+                transform: rotate(90deg);
+                margin: 16px auto;
+            }
+            
+            .newsletter-form,
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .container {
+                padding: 0 16px;
+            }
+            
+            .excellence-grid,
+            .practice-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cases-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .differences-categories {
+                grid-template-columns: 1fr;
+                max-width: none;
+            }
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-highlight">AICHI</span> Criminal Defense Tokyo
+                    <div style="font-size: 0.8rem; opacity: 0.8; font-weight: 400;">韓国語専門弁護士事務所</div>
+                </div>
+                <div class="header-actions">
+                    <a href="tel:0120-631-881" class="phone-action">0120-631-881</a>
+                    <div class="lang-selector">
+                        <button class="lang-option">한국어</button>
+                        <button class="lang-option active">日本語</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">Professional Criminal Defense</div>
+                <h1>刑事事件・少年事件<br>韓国語専門弁護士</h1>
+                <p class="hero-subtitle">在日韓国人・朝鮮人のための刑事法務専門事務所</p>
+                <p class="hero-korean">형사사건・소년사건, 한국어 전문 변호사가 함께합니다</p>
+                
+                <div class="hero-features">
+                    <div class="hero-feature">
+                        <div class="feature-icon">24</div>
+                        <span>24時間365日対応</span>
+                    </div>
+                    <div class="hero-feature">
+                        <div class="feature-icon">🆓</div>
+                        <span>初回相談無料</span>
+                    </div>
+                    <div class="hero-feature">
+                        <div class="feature-icon">🇰🇷</div>
+                        <span>韓国語ネイティブ</span>
+                    </div>
+                    <div class="hero-feature">
+                        <div class="feature-icon">⚖️</div>
+                        <span>刑事専門1000件実績</span>
+                    </div>
+                </div>
+                
+                <div class="hero-cta">
+                    <a href="tel:0120-631-881" class="cta-primary">今すぐ無料相談</a>
+                    <a href="#consultation" class="cta-secondary">相談予約フォーム</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Office Excellence -->
+    <section class="office-excellence">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">当事務所の専門性</h2>
+                <p class="section-subtitle">
+                    刑事事件・少年事件の専門弁護士が、韓国語で一貫したサポートをご提供いたします
+                </p>
+            </div>
+            
+            <div class="excellence-grid">
+                <div class="excellence-card">
+                    <div class="card-icon">⚖️</div>
+                    <h3>刑事・少年事件専門</h3>
+                    <p>東京を含む関東一円において、刑事事件・少年事件のみを専門に扱う法律事務所です。豊富な経験と実績に基づく専門的な弁護技術をご提供いたします。</p>
+                </div>
+                
+                <div class="excellence-card">
+                    <div class="card-icon">👥</div>
+                    <h3>専門チーム体制</h3>
+                    <p>刑事事件専門の弁護士がチームを組み、事件内容によって最適な弁護士が対応。依頼者様との密な連絡と詳細な説明で、安心してお任せいただけます。</p>
+                </div>
+                
+                <div class="excellence-card">
+                    <div class="card-icon">🆓</div>
+                    <h3>無料法律相談</h3>
+                    <p>刑事事件・少年事件に関する初回相談は、どなた様でも、どのようなご相談であっても全て無料です。各段階に応じた適切な対応方法をご説明いたします。</p>
+                </div>
+                
+                <div class="excellence-card">
+                    <div class="card-icon">⚡</div>
+                    <h3>24時間迅速対応</h3>
+                    <p>土日祝日、24時間体制で無料相談や接見のお電話を受付。お急ぎの方には当日中に弁護サービスをご提供し、初期対応の重要性を最大限活用いたします。</p>
+                </div>
+                
+                <div class="excellence-card">
+                    <div class="card-icon">💰</div>
+                    <h3>明朗会計システム</h3>
+                    <p>弁護費用はシンプルかつ明朗会計。ご依頼の際には、事件に応じた適正な料金額を契約前に分かりやすくご説明いたします。</p>
+                </div>
+                
+                <div class="excellence-card">
+                    <div class="card-icon">🇰🇷</div>
+                    <h3>韓国語完全対応</h3>
+                    <p>韓国語ネイティブスタッフによる専門的な法律相談。文化的背景を深く理解し、韓国と日本の法制度の違いも含めて分かりやすくご説明いたします。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Korean Support -->
+    <section class="korean-support">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">韓国語専門サポート</h2>
+                <p class="section-subtitle">
+                    文化と言語を完全に理解する専門弁護士による、きめ細やかなサポート
+                </p>
+            </div>
+            
+            <div class="support-content">
+                <div class="support-visual">
+                    <div class="support-avatar">
+                        韓国語ネイティブ<br>専門弁護士チーム
+                    </div>
+                </div>
+                
+                <div class="support-details">
+                    <h3>言語と文化の壁を越えた専門サポート</h3>
+                    <p style="font-size: 1.1rem; margin-bottom: 24px; color: var(--slate-600); line-height: 1.6;">
+                        在日韓国人・朝鮮人の方々が刑事事件で直面する特有の困難を深く理解している弁護士事務所です。
+                        言語の問題はもちろん、文化的背景や韓国の法制度との違いも考慮した、
+                        総合的で専門的なサポートをご提供いたします。
+                    </p>
+                    
+                    <div class="korean-excellence">
+                        <h4>韓国語サポートの専門優位性</h4>
+                        <ul class="excellence-list">
+                            <li>韓国語ネイティブによる正確で詳細な法律説明</li>
+                            <li>韓国と日本の刑事法制度の違いを専門的に解説</li>
+                            <li>韓国領事館との連絡調整および手続き代行</li>
+                            <li>本国家族への状況説明および継続的サポート</li>
+                            <li>韓国での前科・処罰歴との関係性の詳細分析</li>
+                            <li>在留資格・ビザへの影響および対策の専門的助言</li>
+                        </ul>
+                    </div>
+                    
+                    <p style="color: var(--slate-600); font-style: italic; margin-top: 20px;">
+                        「母国語で法律相談ができる安心感は何物にも代えがたいものです。
+                        複雑な日本の刑事手続きも、韓国語で分かりやすくご説明いたします。」
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legal Differences -->
+    <section class="legal-differences">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">韓日刑事法制度の重要な違い</h2>
+                <p class="section-subtitle">
+                    専門弁護士による正確な比較分析で、最適な弁護戦略を構築します
+                </p>
+            </div>
+            
+            <div class="differences-showcase">
+                <div class="showcase-header">
+                    <div class="showcase-badge">Expert Analysis</div>
+                    <div class="showcase-title">保釈制度の戦略的比較分析</div>
+                </div>
+                
+                <div class="comparison-grid">
+                    <div class="country-section">
+                        <div class="country-flag">🇰🇷</div>
+                        <div class="country-title">韓国保釈制度</div>
+                        <div class="law-point">保釈金設定：比較的低額</div>
+                        <div class="law-point">保釈許可率：約75%</div>
+                        <div class="law-point">審理期間：1-2週間</div>
+                        <div class="law-point">要件：相対的に緩和</div>
+                    </div>
+                    <div class="vs-divider">VS</div>
+                    <div class="country-section">
+                        <div class="country-flag">🇯🇵</div>
+                        <div class="country-title">日本保釈制度</div>
+                        <div class="law-point">保釈金設定：高額設定</div>
+                        <div class="law-point">保釈許可率：約35%</div>
+                        <div class="law-point">審理期間：2-4週間</div>
+                        <div class="law-point">要件：厳格な審査</div>
+                    </div>
+                </div>
+                
+                <div class="expert-insight">
+                    <h4>戦略的弁護アドバイス</h4>
+                    <p>日本の保釈制度は韓国より厳格で、外国人の場合は逃亡リスクを理由に更に困難になります。早期からの綿密な保釈戦略と、在日韓国人としての定住性を明確に立証する準備が成功の鍵となります。</p>
+                </div>
+            </div>
+            
+            <div class="differences-categories">
+                <div class="category-card">
+                    <div class="category-icon">■</div>
+                    <h4>刑事手続比較</h4>
+                    <p>逮捕・勾留・裁判制度の詳細比較</p>
+                    <div class="post-count">15個の専門分析</div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">▲</div>
+                    <h4>刑罰制度比較</h4>
+                    <p>同一犯罪の量刑基準と処罰差異</p>
+                    <div class="post-count">22個の専門分析</div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">●</div>
+                    <h4>外国人特別考慮</h4>
+                    <p>在留資格・強制送還リスク対策</p>
+                    <div class="post-count">18個の専門分析</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h3>韓日刑事法情報メールマガジン</h3>
+                <p>刑事事件専門弁護士が監修する正確な法律情報を定期配信</p>
+                <div class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="メールアドレスをご入力ください">
+                    <button class="newsletter-btn">無料購読</button>
+                </div>
+                <p style="margin-top: 16px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.6);">
+                    毎週水曜日配信 | いつでも購読解除可能
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practice Areas -->
+    <section class="practice-areas">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">主要弁護活動</h2>
+                <p class="section-subtitle">
+                    刑事事件の各段階において専門的で効果的な弁護活動を展開いたします
+                </p>
+            </div>
+            
+            <div class="practice-grid">
+                <div class="practice-card">
+                    <h3>🔍 捜査段階（逮捕前）</h3>
+                    <ul class="practice-stages">
+                        <li>相談内容について逮捕の可能性等を含めた今後の見通し説明</li>
+                        <li>取調べ対応指示</li>
+                        <li>出頭や取調べなどへの同行</li>
+                        <li>韓国語での詳細な事前準備</li>
+                    </ul>
+                </div>
+                
+                <div class="practice-card">
+                    <h3>🔒 捜査段階（逮捕後）</h3>
+                    <ul class="practice-stages">
+                        <li>身体拘束からの解放に向けた活動</li>
+                        <li>取調べに向けたアドバイス</li>
+                        <li>小まめな接見（面会）と綿密な打ち合せ</li>
+                        <li>ご家族や勤務先など外部への連絡のためのパイプ</li>
+                        <li>家族との面会実現に向けた活動</li>
+                        <li>示談交渉など事件の早期解決に向けた活動</li>
+                        <li>不起訴獲得又は刑事処分軽減のための活動</li>
+                    </ul>
+                </div>
+                
+                <div class="practice-card">
+                    <h3>⚖️ 裁判段階</h3>
+                    <ul class="practice-stages">
+                        <li>保釈請求など身柄拘束からの解放に向けた活動</li>
+                        <li>証拠の精査と違法不当な証拠を争う</li>
+                        <li>有利な証拠の収集と提出</li>
+                        <li>十分な公判準備と入念な打合せ</li>
+                        <li>無罪判決、執行猶予判決、大幅な減刑を獲得するための弁論</li>
+                        <li>上訴する場合の書面作成や再保釈活動</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Cases -->
+    <section class="success-cases">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">解決実績</h2>
+                <p class="section-subtitle">
+                    専門的で戦略的な弁護活動により、困難な事件でも優れた成果を実現しています
+                </p>
+            </div>
+            
+            <div class="cases-grid">
+                <div class="case-card">
+                    <div class="case-type">戦略的弁護</div>
+                    <div class="case-content">
+                        暴行罪で起訴されたK氏の事件。韓国語での詳細な事情聴取により正当防衛の可能性を発見し、綿密な証拠収集と被害者との示談交渉を並行実施。最終的に不起訴処分を獲得し、前科を回避。
+                    </div>
+                    <div class="case-result">✓ 不起訴処分獲得・前科回避・円満解決</div>
+                </div>
+                
+                <div class="case-card">
+                    <div class="case-type">国際連携</div>
+                    <div class="case-content">
+                        業務上横領で勾留中のP氏。韓国領事館と連携し本国家族の理解を得ながら、複雑な会計処理の専門的分析を実施。被害額の大幅減額交渉に成功し、執行猶予判決を獲得。
+                    </div>
+                    <div class="case-result">✓ 執行猶予判決・社会復帰・継続就労</div>
+                </div>
+                
+                <div class="case-card">
+                    <div class="case-type">緊急対応</div>
+                    <div class="case-content">
+                        交通事故による業務上過失致死事件のL氏。事故直後から迅速に対応し、被害者遺族との真摯な対話と適切な示談交渉を実施。韓国での報道対応も含めて総合的にサポートし、起訴猶予を実現。
+                    </div>
+                    <div class="case-result">✓ 起訴猶予処分・示談成立・名誉回復</div>
+                </div>
+                
+                <div class="case-card">
+                    <div class="case-type">少年事件</div>
+                    <div class="case-content">
+                        傷害事件で家庭裁判所に送致された在日韓国人少年M君。日韓の少年法制度の違いを活用し、韓国的な価値観も考慮した環境調整を実施。家族の協力を得て社会復帰プログラムを策定し、無事に学校復帰を実現。
+                    </div>
+                    <div class="case-result">✓ 保護観察処分・完全学校復帰・家族関係修復</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="consultation">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">専門相談のお申込み</h2>
+                <p class="section-subtitle">
+                    韓国語対応専門弁護士が24時間以内にご連絡いたします
+                </p>
+            </div>
+            
+            <div class="contact-form">
+                <h3 class="form-title">無料相談申込フォーム</h3>
+                <p class="form-subtitle">
+                    高度な専門性と豊富な経験を持つ弁護士による、質の高い法律相談をご提供いたします
+                </p>
+                
+                <form id="consultationForm">
+                    <div class="form-group">
+                        <label class="form-label" for="name">お名前 *</label>
+                        <input class="form-input" type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="phone">連絡先電話番号 *</label>
+                        <input class="form-input" type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="email">メールアドレス</label>
+                        <input class="form-input" type="email" id="email" name="email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="case-type">事件の種類 *</label>
+                        <select class="form-input" id="case-type" name="case-type" required>
+                            <option value="">選択してください</option>
+                            <option value="criminal">一般刑事事件</option>
+                            <option value="juvenile">少年事件</option>
+                            <option value="traffic">交通事件</option>
+                            <option value="economic">経済犯罪</option>
+                            <option value="violence">暴力犯罪</option>
+                            <option value="other">その他</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="urgency">緊急度 *</label>
+                        <select class="form-input" id="urgency" name="urgency" required>
+                            <option value="">選択してください</option>
+                            <option value="emergency">緊急（逮捕・勾留中）</option>
+                            <option value="urgent">至急（近日中に対応必要）</option>
+                            <option value="normal">通常（相談・準備段階）</option>
+                            <option value="preventive">予防的相談</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="consultation-method">相談希望方法 *</label>
+                        <select class="form-input" id="consultation-method" name="consultation-method" required>
+                            <option value="">選択してください</option>
+                            <option value="phone">電話相談</option>
+                            <option value="office">事務所面談</option>
+                            <option value="video">オンライン相談</option>
+                            <option value="detention">拘置所・警察署面会</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="details">事件の詳細・ご相談内容</label>
+                        <textarea class="form-input" id="details" name="details" rows="4" 
+                                placeholder="事件の概要、現在の状況、ご心配な点などを詳しくお書きください"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="form-submit">
+                        専門相談を申込む
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>弁護士法人あいち刑事事件総合法律事務所</h4>
+                    <ul>
+                        <li>東京支部</li>
+                        <li>📍 東京都新宿区西新宿1丁目14-15　タウンウエストビル9階</li>
+                        <li>📞 0120-631-881（24時間対応）</li>
+                        <li>🇰🇷 韓国語専門サポート</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>専門取扱分野</h4>
+                    <ul>
+                        <li>刑事事件全般</li>
+                        <li>少年事件・家庭裁判所手続</li>
+                        <li>交通事故・交通違反</li>
+                        <li>暴行・傷害・脅迫事件</li>
+                        <li>経済犯罪（横領・詐欺・背任）</li>
+                        <li>薬物事件・覚醒剤事件</li>
+                        <li>性犯罪・わいせつ事件</li>
+                        <li>その他刑事事件</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>専門サービス</h4>
+                    <ul>
+                        <li>緊急接見・面会サービス</li>
+                        <li>保釈請求・勾留準抗告</li>
+                        <li>示談交渉・被害者対応</li>
+                        <li>不起訴獲得活動</li>
+                        <li>刑事裁判弁護</li>
+                        <li>控訴・上告審対応</li>
+                        <li>家族サポート・相談</li>
+                        <li>社会復帰支援</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>韓国語専門サポート</h4>
+                    <ul>
+                        <li>韓国語ネイティブ弁護士による相談</li>
+                        <li>韓国語通訳・翻訳サービス</li>
+                        <li>韓国領事館連絡・手続代行</li>
+                        <li>本国家族への説明・サポート</li>
+                        <li>韓日刑事法制度比較説明</li>
+                        <li>在留資格への影響分析</li>
+                        <li>強制送還リスク評価・対策</li>
+                        <li>韓国での前科関係整理</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 弁護士法人あいち刑事事件総合法律事務所 東京支部. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission
+        document.getElementById('consultationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const urgency = document.getElementById('urgency').value;
+            let responseTime = '24時間以内';
+            let priority = '';
+            
+            switch(urgency) {
+                case 'emergency':
+                    responseTime = '最優先で即座に';
+                    priority = '【緊急対応】';
+                    break;
+                case 'urgent':
+                    responseTime = '12時間以内に';
+                    priority = '【至急対応】';
+                    break;
+                case 'normal':
+                    responseTime = '24時間以内に';
+                    priority = '【通常対応】';
+                    break;
+                default:
+                    responseTime = '48時間以内に';
+                    priority = '【予防相談】';
+            }
+            
+            alert(`${priority}専門相談の申込みを受付いたしました。\n\n${responseTime}韓国語対応専門弁護士からご連絡いたします。\n\n緊急時は今すぐお電話ください：\n📞 0120-631-881（24時間対応）`);
+        });
+
+        // Newsletter subscription
+        document.querySelector('.newsletter-btn').addEventListener('click', function() {
+            const email = document.querySelector('.newsletter-input').value;
+            if (email && email.includes('@')) {
+                alert('韓日刑事法情報メールマガジンの購読申込みが完了しました！\n\n毎週水曜日に専門的な法律分析をお送りいたします。\n\n등록 이메일: ' + email);
+                document.querySelector('.newsletter-input').value = '';
+            } else {
+                alert('正しいメールアドレスをご入力ください。');
+            }
+        });
+
+        // Category interactions
+        document.querySelectorAll('.category-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const category = this.querySelector('h4').textContent;
+                alert(`「${category}」の詳細分析について\n\n専門弁護士による詳しい説明をご希望の場合は、\n\n📞 0120-631-881 までお電話ください。\n\n韓国語での専門相談が可能です。`);
+            });
+        });
+
+        // Language toggle
+        document.querySelectorAll('.lang-option').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.lang-option').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                if (this.textContent === '한국어') {
+                    alert('한국어 버전을 준비중입니다.\n韓国語版を準備中です。\n\n상담을 원하시면:\nご相談をご希望の場合：\n📞 0120-631-881');
+                }
+            });
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
