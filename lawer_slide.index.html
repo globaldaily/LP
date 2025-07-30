@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>在日韓国人向け法律相談ランディングページ制作企画案</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800&family=Noto+Serif+JP:wght@600;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-color: #ffffff;
+            --bg-subtle: #f8fafc;
+            --bg-muted: #f1f5f9;
+            --text-dark: #1e293b;
+            --text-heading: #0f172a;
+            --text-light: #64748b;
+            --text-muted: #94a3b8;
+            --primary-navy: #334155;
+            --primary-dark: #1e293b;
+            --primary-light: #475569;
+            --primary-bg: #f1f5f9;
+            --accent-blue: #4f46e5;
+            --accent-green: #15803d;
+            --accent-orange: #9a3412;
+            --border-color: #e2e8f0;
+            --shadow-subtle: 0 1px 3px 0 rgba(0, 0, 0, 0.06);
+            --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+            --shadow-large: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+            --gradient-navy: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-navy) 100%);
+            --gradient-accent: linear-gradient(135deg, var(--accent-blue) 0%, #3b82f6 100%);
+            --gradient-subtle: linear-gradient(135deg, var(--bg-color) 0%, var(--bg-subtle) 100%);
+            --font-heading: 'Noto Serif JP', serif;
+            --font-body: 'Noto Sans JP', sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); background: var(--bg-subtle); color: var(--text-dark); margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; width: 100vw; height: 100vh; }
+        .slide { width: 1280px; height: 720px; background: var(--bg-color); box-shadow: var(--shadow-large); display: flex; flex-direction: column; padding: 25px 55px; position: relative; border-radius: 8px; border: 1px solid var(--border-color); }
+        .slide-top-header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 15px; border-bottom: 2px solid var(--primary-navy); width: 100%; flex-shrink: 0; margin-bottom: 5px; }
+        .slide-top-header::before { content: ''; display: block; width: 300px; height: 42px; background-image: url('https://www.gldaily.com/gld-kanri/wp-content/themes/gldaily/assets/images/logo.png'); background-size: contain; background-repeat: no-repeat; background-position: left center; }
+        .slide-top-header .client-info { font-size: 0.95rem; color: var(--text-light); text-align: right; line-height: 1.3; font-weight: 500; }
+        .slide-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 15px; border-top: 2px solid var(--primary-navy); width: 100%; flex-shrink: 0; margin-top: 5px; }
+        .slide-footer .presenter .company-name { font-size: 0.9rem; color: #444; font-weight: 500; }
+        .slide-footer .presenter .presenter-info { font-size: 0.75rem; color: #999; font-weight: 400; }
+        .slide-footer .page-number { font-weight: 700; font-family: var(--font-heading); color: white; font-size: 1rem; background: var(--gradient-navy); padding: 8px 16px; border-radius: 6px; box-shadow: var(--shadow-medium); }
+        .slide-main-content { flex: 1; display: flex; flex-direction: column; width: 100%; padding: 15px 0; }
+        .slide-main-content .slide-header { margin-bottom: 20px; flex-shrink: 0; }
+        .slide-main-content .slide-content { flex: 1; display: flex; flex-direction: column; }
+        .slide-main-content .slide-header h1 { font-family: var(--font-heading); font-size: 2rem; color: var(--primary-dark); margin: 0; line-height: 1.2; font-weight: 700; }
+        .slide-main-content .slide-header h2 { font-family: var(--font-body); font-size: 1rem; color: var(--text-light); font-weight: 500; margin-top: 8px; line-height: 1.3; }
+        .title-slide .slide-header { text-align: center; padding-top: 40px; }
+        .title-slide .slide-header h1 { font-size: 2.6rem; background: var(--gradient-navy); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .title-slide .slide-header h2 { font-size: 1.1rem; color: var(--text-dark); font-weight: 600; margin-top: 12px; }
+        .title-slide .presenter-section { text-align: center; margin-top: 30px; padding: 20px; background: var(--bg-subtle); border-radius: 8px; border: 1px solid var(--border-color); }
+        .title-slide .presenter-section h3 { font-size: 1.1rem; color: var(--primary-dark); margin: 0 0 10px 0; font-weight: 600; }
+        .title-slide .presenter-section p { font-size: 0.9rem; color: var(--text-light); margin: 0; line-height: 1.4; }
+        .index-slide { display: flex; flex-direction: row; gap: 18px; height: 100%; }
+        .index-section { background: var(--bg-color); padding: 18px; border-radius: 8px; box-shadow: var(--shadow-medium); border: 1px solid var(--border-color); display: flex; flex-direction: column; flex: 1; }
+        .index-section h3 { font-family: var(--font-heading); font-size: 1rem; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 2px solid; font-weight: 700; flex-shrink: 0; }
+        .index-section:nth-child(1) h3 { color: var(--primary-navy); border-bottom-color: var(--primary-navy); }
+        .index-section:nth-child(2) h3 { color: #059669; border-bottom-color: #059669; }
+        .index-section:nth-child(3) h3 { color: var(--accent-blue); border-bottom-color: var(--accent-blue); }
+        .index-item { display: flex; align-items: center; padding: 4px 6px; margin-bottom: 3px; border-radius: 4px; transition: all 0.2s ease; cursor: pointer; }
+        .index-item:hover { background: var(--primary-bg); transform: translateX(2px); }
+        .index-number { background: var(--gradient-navy); color: white; width: 22px; height: 22px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-weight: 700; margin-right: 10px; font-size: 0.7rem; box-shadow: var(--shadow-subtle); flex-shrink: 0; }
+        .index-title { font-size: 0.85rem; color: var(--text-heading); font-weight: 500; line-height: 1.3; }
+        .creative-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; height: 100%; }
+        .creative-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; height: 100%; }
+        .grid-item { background: var(--bg-color); padding: 20px; border-radius: 8px; box-shadow: var(--shadow-subtle); border: 1px solid var(--border-color); display: flex; flex-direction: column; }
+        .grid-item h3 { font-family: var(--font-heading); font-size: 1rem; padding-bottom: 8px; border-bottom: 2px solid; margin: 0 0 15px 0; font-weight: 700; flex-shrink: 0; }
+        .grid-item:nth-child(1) h3 { color: var(--primary-navy); border-bottom-color: var(--primary-navy); }
+        .grid-item:nth-child(2) h3 { color: var(--accent-green); border-bottom-color: var(--accent-green); }
+        .grid-item:nth-child(3) h3 { color: var(--accent-orange); border-bottom-color: var(--accent-orange); }
+        .grid-item ul { list-style: none; padding-left: 0; margin: 0; flex: 1; }
+        .grid-item ul li { font-size: 0.9rem; line-height: 1.6; margin-bottom: 10px; display: flex; }
+        .grid-item ul li::before { content: '✓'; color: var(--accent-blue); margin-right: 10px; flex-shrink: 0; margin-top: 2px; }
+        .icon-text-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; height: 100%; }
+        .icon-card { background: var(--bg-subtle); border: 1px solid var(--border-color); border-radius: 8px; padding: 25px; text-align: center; box-shadow: var(--shadow-subtle); display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        .icon-card .icon { font-size: 2.8rem; margin-bottom: 15px; color: var(--accent-blue); }
+        .icon-card h3 { font-family: var(--font-heading); font-size: 1.1rem; color: var(--primary-dark); margin: 0 0 10px 0; font-weight: 700; }
+        .icon-card p { font-size: 0.9rem; line-height: 1.5; color: var(--text-dark); margin: 0; }
+        .icon-card ul { text-align: left; margin: 0; padding: 0; list-style: none; }
+        .icon-card ul li { font-size: 0.85rem; line-height: 1.5; margin-bottom: 8px; }
+        .highlight-text { color: var(--accent-blue); font-weight: 700; background: #eef2ff; padding: 2px 6px; border-radius: 3px; }
+        .concept-box { margin-top: 10px; padding: 12px 15px; background: var(--bg-subtle); border-left: 3px solid var(--primary-navy); border-radius: 4px; font-size: 0.85rem; box-shadow: var(--shadow-subtle); }
+        .concept-box strong { font-family: var(--font-heading); color: var(--primary-dark); font-weight: 700; }
+        .benefit-highlight-box { background: var(--gradient-subtle); border-top: 2px solid var(--accent-blue); border-radius: 6px; padding: 18px; margin-top: auto; box-shadow: var(--shadow-subtle); }
+        .benefit-text { font-size: 1rem; font-weight: 600; color: var(--primary-dark); text-align: center; }
+        .plan-detail-card h4 { font-size: 1rem; color: var(--accent-blue); border-left: 4px solid var(--accent-blue); padding-left: 8px; margin: 12px 0 8px 0; font-weight: 700; }
+        .plan-detail-card ul { list-style: none; padding-left: 18px; margin: 0 0 10px 0; }
+        .plan-detail-card li { font-size: 0.85rem; line-height: 1.4; margin-bottom: 4px; }
+        .plan-detail-card li small { color: #64748b; font-size: 0.9em; display: block; margin-top: 1px; }
+        .data-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; border-radius: 6px; overflow: hidden; box-shadow: var(--shadow-subtle); margin: 10px 0; }
+        .data-table th, .data-table td { border: 1px solid var(--border-color); padding: 10px 12px; text-align: left; vertical-align: top; }
+        .data-table thead { background: var(--gradient-navy); color: white; }
+        .data-table th { font-family: var(--font-heading); font-weight: 700; font-size: 0.85rem; }
+        .data-table tbody tr:nth-child(even) { background: var(--bg-subtle); }
+        .data-table .cat-promo { background-color: #fff7ed; color: #9a3412; font-weight: 700; text-align: center; }
+        .data-table .cat-ad { background-color: #f0fdf4; color: #15803d; font-weight: 700; text-align: center; }
+        .data-table .cat-content { background-color: #f5f3ff; color: #5b21b6; font-weight: 700; text-align: center; }
+        .data-table .cat-ops { background-color: #eef2ff; color: #312e81; font-weight: 700; text-align: center; }
+        .data-table small.why { display: block; margin-top: 4px; color: #0d9488; font-weight: 600; font-size: 0.95em; }
+        .data-table small.why::before { content: "➤ "; }
+        .conclusion-slide .slide-content { text-align: center; justify-content: center; gap: 25px; display: flex; flex-direction: column; padding: 25px; }
+        .conclusion-slide .slide-content p { margin: 0; padding: 20px; border-radius: 8px; background: var(--bg-subtle); border-left: 4px solid var(--accent-blue); font-size: 1.05rem; line-height: 1.6; }
+        .conclusion-cta { padding: 25px; background: var(--gradient-navy); border-radius: 8px; color: white; text-align: center; box-shadow: var(--shadow-large); margin-top: 25px; }
+        .conclusion-cta strong { font-size: 1.2rem; display: block; }
+        .slide-wrapper { display: none; }
+        .slide-wrapper.active { display: block; }
+        .summary-section { background: var(--bg-subtle); padding: 12px; border-radius: 6px; margin: 8px 0; border-left: 3px solid var(--accent-blue); }
+        .summary-section h4 { font-size: 0.9rem; color: var(--accent-blue); margin: 0 0 4px 0; font-weight: 700; }
+        .summary-section p { font-size: 0.8rem; margin: 0; line-height: 1.3; }
+        .comparison-table { width: 100%; border-collapse: collapse; font-size: 0.75rem; margin: 15px 0; }
+        .comparison-table th, .comparison-table td { border: 1px solid var(--border-color); padding: 8px 10px; text-align: left; vertical-align: top; }
+        .comparison-table thead { background: var(--gradient-navy); color: white; }
+        .comparison-table .plan-a-header { background-color: #fee2e2; color: #dc2626; }
+        .comparison-table .plan-b-header { background-color: #eef2ff; color: var(--accent-blue); }
+        .structure-layout { display: flex; flex-direction: column; justify-content: center; gap: 30px; }
+        .structure-item { display: flex; align-items: center; gap: 18px; padding: 18px; border-radius: 8px; border-left: 4px solid; }
+        .structure-item.ume { background: #fff0f6; border-left-color: #b83280; }
+        .structure-item.take { background: #eef2ff; border-left-color: var(--accent-blue); }
+        .structure-item.matsu { background: #fffde7; border-left-color: #ca8a04; }
+        .structure-label { font-weight: 700; min-width: 80px; }
+        .structure-label.ume { color: #b83280; }
+        .structure-label.take { color: var(--accent-blue); }
+        .structure-label.matsu { color: #ca8a04; }
+        .structure-box { padding: 10px 18px; background: white; border: 1px solid #e2e8f0; border-radius: 6px; font-weight: 500; }
+        .structure-plus { font-size: 1.2rem; font-weight: 700; }
+        .structure-desc { font-size: 0.85rem; color: #64748b; }
+        .compact-table { font-size: 0.75rem; }
+        .compact-table th, .compact-table td { padding: 6px 8px; }
+        .text-content { padding: 20px 0; }
+        .text-content ul { padding-left: 25px; margin: 0; columns: 2; gap: 25px; list-style-type: '※ '; }
+        .text-content li { break-inside: avoid; margin-bottom: 12px; font-size: 0.85rem; line-height: 1.6; }
+        .text-content li strong { color: var(--primary-dark); }
+
+        @media print {
+            body { background: white; }
+            .slide { box-shadow: none; border: 1px solid #ccc; page-break-after: always; }
+            .slide-wrapper { display: block !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- スライド01: タイトル -->
+    <div class="slide-wrapper active">
+        <div class="slide">
+            <header class="slide-top-header">
+                <div class="client-info">弁護士法人あいち刑事事件総合法律事務所東京支部 御中<br>在日韓国人向け法律相談LP制作企画案</div>
+            </header>
+            <main class="slide-main-content">
+                <div class="slide-content title-slide">
+                    <div class="slide-header">
+                        <h1>在日韓国人・朝鮮人専用<br>法律相談ランディングページ制作企画案</h1>
+                        <h2>〜<span class="highlight-text">約42万人</span>の潜在顧客層に信頼を届け、<br>コミュニティの法的パートナーとしての地位を確立する〜</h2>
+                    </div>
+                    <div class="presenter-section">
+                        <h3>営業担当</h3>
+                        <p>株式会社グローバル・デイリー<br>
+                        <strong>田邊翔子（たなべ しょうこ）</strong><br>
+                        Email: tanabe@gldaily.com | Tel: 03-68060-7011</p>
+                    </div>
+                </div>
+            </main>
+            <footer class="slide-footer">
+                <div class="presenter">
+                    <div class="company-name">株式会社グローバル・デイリー | Global Daily Co., Ltd.</div>
+                    <div class="presenter-info">Prepared and delivered by Juli Kim | PR Division, Global Daily</div>
+                </div>
+                <div class="page-number">01</div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- スライド02: 目次 -->
+    <div class="slide-wrapper">
+        <div class="slide">
+            <header class="slide-top-header">
+                <div class="client-info">弁護士法人あいち刑事事件総合法律事務所東京支部 御中<br>在日韓国人向け法律相談LP制作企画案</div>
+            </header>
+            <main class="slide-main-content">
+                <div class="slide-header">
+                    <h1>提案内容 目次</h1>
+                </div>
+                <div class="slide-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; height: 100%;">
+                    <div style="display: flex; flex-direction: column; gap: 20px;">
+                        <div class="index-section">
+                            <h3>戦略・分析</h3>
+                            <div class="index-item"><div class="index-number">03</div><div class="index-title">プロジェクト戦略概要</div></div>
+                            <div class="index-item"><div class="index-number">04</div><div class="index-title">3分要約（Executive Summary）</div></div>
+                            <div class="index-item"><div class="index-number">05</div><div class="index-title">市場機会と課題分析</div></div>
+                            <div class="index-item"><div class="index-number">06</div><div class="index-title">提案コンセプト比較（A案/B案）</div></div>
+                            <div class="index-item"><div class="index-number">07</div><div class="index-title">サイト構造とプラン対応</div></div>
+                        </div>
+                        <div class="index-section">
+                            <h3>価値・完成</h3>
+                            <div class="index-item"><div class="index-number">14</div><div class="index-title">当社独自の提供価値</div></div>
+                            <div class="index-item"><div class="index-number">16</div><div class="index-title">契約・運用条件（重要事項）</div></div>
+                            <div class="index-item"><div class="index-number">17</div><div class="index-title">ご提案の結論</div></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="index-section">
+                            <h3>プラン・価格</h3>
+                            <div class="index-item"><div class="index-number">08</div><div class="index-title">プラン比較一覧</div></div>
+                            <div class="index-item"><div class="index-number">09</div><div class="index-title">梅プラン（Basic）詳細</div></div>
+                            <div class="index-item"><div class="index-number">10</div><div class="index-title">竹プラン（Standard）詳細</div></div>
+                            <div class="index-item"><div class="index-number">11</div><div class="index-title">松プラン（Premium）詳細</div></div>
+                            <div class="index-item"><div class="index-number">12</div><div class="index-title">追加オプション（プロモーション）</div></div>
+                            <div class="index-item"><div class="index-number">13</div><div class="index-title">追加オプション（コンテンツ/運用）</div></div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer class="slide-footer">
+                <div class="presenter"></div>
+                <div class="page-number">02</div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- スライド03: プロジェクト戦略概要 -->
+    <div class="slide-wrapper">
+        <div class="slide">
+            <header class="slide-top-header">
+                <div class="client-info">弁護士法人あいち刑事事件総合法律事務所東京支部 御中<br>在日韓国人向け法律相談LP制作企画案</div>
+            </header>
+            <main class="slide-main-content">
+                <div class="slide-header">
+                    <h1>プロジェクト戦略概要</h1>
+                    <h2>なぜ今、韓国語専門LPが必要なのか？</h2>
+                </div>
+                <div class="slide-content">
+                    <div class="creative-grid-3">
+                        <div class="grid-item">
+                            <h3>市場機会の発見</h3>
+                            <ul>
+                                <li>約<span class="highlight-text">42万人</span>¹の在日韓国人・朝鮮人という巨大な潜在顧客層</li>
+                                <li>言語的・文化的障壁による専門法律サービスへの高い潜在需要</li>
+                                <li>「韓国語対応」だけでなく<span class="highlight-text">「韓日法律差異の解説」</span>という競合にはない明確な付加価値</li>
+                            </ul>
+                        </div>
+                        <div class="grid-item">
+                            <h3>基本戦略方針</h3>
+                            <ul>
+                                <li>既存サイトの信頼性を活かし、韓国語専用セクションを追加</li>
+                                <li>緊急時・相談時双方の不安を解消し、即時行動を促すコンテンツ設計</li>
+                                <li>公開後の<span class="highlight-text">成果測定(KPI)</span>と改善サイクル(PDCA)までを見据えた運用</li>
+                            </ul>
+                        </div>
+                        <div class="grid-item">
+                            <h3>期待される成果</h3>
+                            <ul>
+                                <li>新規顧客層からの問い合わせ（電話・フォーム）獲得</li>
+                                <li>韓国語主要キーワードでの<span class="highlight-text">検索順位向上</span>による中長期的資産の構築</li>
+                                <li>在日韓国人法律相談分野における第一人者としてのブランドポジション確立</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p style="font-size:0.7rem; color: #64748b; margin-top:20px;">¹ 出典：「令和６年末現在における在留外国人数」（法務省 出入国在留管理庁, 2025/03/22 公表データに基づく推定値）</p>
+                </div>
+            </main>
+            <footer class="slide-footer">
+                <div class="presenter"></div>
+                <div class="page-number">03</div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- スライド04: 3分要約 -->
+    <div class="slide-wrapper">
+        <div class="slide">
+            <header class="slide-top-header">
+                <div class="client-info">弁護士法人あいち刑事事件総合法律事務所東京支部 御中<br>在日韓国人向け法律相談LP制作企画案</div>
+            </header>
+            <main class="slide-main-content">
+                <div class="slide-header">
+                    <h1>3分要約（Executive Summary）</h1>
+                    <h2>プロジェクトの核心ポイント</h2>
+                </div>
+                <div class="slide-content" style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr 1fr; gap: 15px; height: 100%;">
+                    <div class="summary-section">
+                        <h4>目的</h4>
+                        <p>在日韓国人向け法律サービスの新規顧客獲得と認知拡大</p>
+                    </div>
+                    <div class="summary-section">
+                        <h4>対象</h4>
+                        <p>在日韓国人・朝鮮人 約42万人（令和6年末現在）</p>
+                    </div>
+                    <div class="summary-section">
+                        <h4>USP（独自価値提案）</h4>
+                        <p>韓国語対応 + 韓日法差異の分かりやすい解説で差別化</p>
+                    </div>
+                    <div class="summary-section">
+                        <h4>推奨プラン</h4>
+                        <p>竹プラン（制作 + サブページ3枚）<br><small>※公開後3ヶ月の運用重視なら松プラン</small></p>
+                    </div>
+                    <div class="summary-section">
+                        <h4>期待KPI（初期3ヶ月）</h4>
+                        <p>CVR計測開始・フォーム送信数/電話発信数の可視化、CPC最適化のPDCA</p>
+                    </div>
+                    <div class="summary-section">
+                        <h4>制作+初動マーケティング</h4>
+                        <p>LP公開最初の3ヵ月で"実案件につながる数字"を可視化し、投資回収サイクルを最短化</p>
+                    </div>
+                </div>
+            </main>
+            <footer class="slide-footer">
+                <div class="presenter"></div>
+                <div class="page-number">04</div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- スライド05: 市場機会と課題分析 -->
+    <div class="slide-wrapper">
+        <div class="slide">
+            <header class="slide-top-header">
+                <div class="client-info">弁護士法人あいち刑事事件総合法律事務所東京支部 御中<br>在日韓国人向け法律相談LP制作企画案</div>
+            </header>
+            <main class="slide-main-content">
+                <div class="slide-header">
+                    <h1>市場機会と課題分析</h1>
+                    <h2>Pain Point（課題）からSolution（解決策）まで</h2>
+                </div>
+                <div class="slide-content" style="display: flex; flex-direction: column; gap: 25px; height: 100%;">
+                    <div style="display: flex; align-items: center; gap: 20px; padding: 20px; background: var(--bg-subtle); border: 1px solid var(--border-color); border-radius: 8px; box-shadow: var(--shadow-subtle);">
+                        <div style="font-size: 3rem; color: var(--accent-blue); flex-shrink: 0;">⚠️</div>
+                        <div>
+                            <h3 style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--primary-dark); margin: 0 0 10px 0; font-weight: 700;">現在の課題（Pain Point）</h3>
+                            <ul style="margin: 0; padding: 0; list-style: none;">
+                                <li style="font-size: 0.85rem; line-height: 1.5; margin-bottom: 8px;"><strong>言語障壁：</strong>日本語での専門用語の理解が困難</li>
+                                <li style="font-size: 0.85rem; line-height: 1.5; margin-bottom: 8px;"><strong>法制度差異：</strong>韓日法律の違いに対する不安と誤解</li>
+                                <li style="font-size: 0.85rem; line-height: 1.5; margin-bottom: 8px;"><strong>情報不足：</strong>信頼できる韓国語情報源が少ない</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 20px; padding: 20px; background: var(--bg-subtle); border: 1px solid var(--border-color); border-radius: 8px; box-shadow: var(--shadow-subtle);">
+                        <div style="font-size: 3rem; color: var(--accent-blue); flex-shrink: 0;">💡</div>
+                        <div>
+                            <h3 style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--primary-dark); margin: 0 0 10px 0; font-weight: 700;">解決策（Solution）</h3>
+                            <ul style="margin: 0; padding: 0; list-style: none;">
+                                <li style="font-size: 0.85rem; line-height: 1.5; margin-bottom: 8px;"><strong>韓国語LP制作：</strong>韓日法差異を分かりやすく可視化</li>
+                                <li style="font-size: 0.85rem; line-height: 1.5; margin-bottom: 8px;"><strong>自然拡散：</strong>SNSやブログネットワークを活用</li>
+                                <li style="font-size: 0.85rem; line-height: 1.5; margin-bottom: 8px;"><strong>広告ブースト：</strong>短期で成果指標を可視化</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer class="slide-footer">
+                <div class="presenter"></div>
+                <div class="page-number">05</div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- スライド06: 提案コンセプト比較 -->
+    <div class="slide-wrapper">
+        <div class="slide">
+            <header class="slide-top-header">
+                <div class="client-info">弁護士法人あいち刑事事件総合法律事務所東京支部 御中<br>在日韓国人向け法律相談LP制作企画案</div>
+            </header>
+            <main class="slide-main-content">
+                <div class="slide-header">
+                    <h1>提案コンセプト比較（A案/B案）</h1>
+                    <h2>ターゲットの心理状態に合わせた2つのアプローチ</h2>
+                </div>
+                <div class="slide-content">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th style="width:20%;">比較項目</th>
+                                <th class="plan-a-header">A案 – 緊急対応特化型 LP</th>
+                                <th class="plan-b-header">B案 – 専門性中心型 LP</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>基本コンセプト</th>
+                                <td>「緊急時を救う信頼できる法的パートナー」</td>
+                                <td>「あらゆる法的問題をワンストップで扱う専門法律事務所」</td>
+                            </tr>
+                            <tr>
+                                <th>ページ構成</th>
+                                <td>1 LP完結型<br>・緊急シナリオ 6種<br>・24hサポート紹介<br>・韓日法差異（基礎）</td>
+                                <td>1 LP＋情報セクション多数<br>・専門性カード 6枚<br>・韓国語サポート詳細<br>・法差異（拡張インフォグラフィック）</td>
+                            </tr>
+                            <tr>
+                                <th>期待KPI</th>
+                                <td>☑ 電話問い合わせ数 短期増<br>☑ 1ページ完結 CVR最大化</td>
+                                <td>☑ 検索流入（SEO）<br>☑ B2B/長期案件 リード創出</td>
+                            </tr>
+                            <tr>
+                                <th>向いているケース</th>
+                                <td>・緊急事態対応を最優先したい<br>・「まず電話」導線だけで十分</td>
+                                <td>・法的問題全般を網羅的に訴求したい<br>・相談フェーズのユーザーも取り込みたい</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="benefit-highlight-box">
+                        <div class="benefit-text" style="font-size:0.9rem;">推奨: A案 - 法的問題の特性上、まずユーザーを安心させ即時電話へ繋げる「緊急対応特化型」が最も高い効果を期待できます。</div>
+                    </div>
+                </div>
+            </main>
+            <footer class="slide-footer">
+                <div class="presenter"></div>
+                <div class="page-number">06</div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- スライド07: サイト構造とプラン対応 -->
+    <div class="slide-wrapper">
+        <div class="slide">
+            <header class="slide-top-header">
+                <div class="client-info">弁護士法人あいち刑事事件総合法律事務所東京支部 御中<br>在日韓国人向け法律相談LP制作企画案</div>
+            </header>
+            <main class="slide-main-content">
+                <div class="slide-header">
+                    <h1>サイト構造とプラン対応</h1>
+                    <h2>段階的な制作範囲とコンテンツ拡張戦略</h2>
+                </div>
+                <div class="slide-content structure-layout">
+                    <div class="structure-item ume">
+                        <div class="structure-label ume">梅プラン</div>
+                        <div class="structure-box">メインLP</div>
+                        <div class="structure-desc">(A or B コンセプト)</div>
+                    </div>
+                    <div class="structure-item take">
+                        <div class="structure-label take">竹プラン</div>
+                        <div class="structure-box">メインLP</div>
+                        <div class="structure-plus">+</div>
+                        <div class="structure-box">サブページ x 3</div>
+                        <div class="structure-desc">(取扱分野, 料金, Q&A)</div>
+                    </div>
+                    <div class="structure-item matsu">
+                        <div class="structure-label matsu">松プラン</div>
+                        <div class="structure-box">メインLP</div>
+                        <div class="structure-plus">+</div>
+                        <div class="structure-box">サブページ x 6</div>
+                        <div class="structure-desc">(竹プランの内容 + 事務所紹介, 成功事例 etc.)</div>
+                    </div>
+                </div>
+            </main>
+            <footer class="slide-footer">
+                <div class="presenter"></div>
+                <div class="page-number">07</div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- スライド08: プラン比較一覧 -->
+    <div class="slide-wrapper">
+        <div class="slide">
+            <header class="slide-top-header">
+                <div class="client-info">弁護士法人あいち刑事事件総合法律事務所東京支部 御中<br>在日韓国人向け法律相談LP制作企画案</div>
+            </header>
+            <main class="slide-main-content">
+                <div class="slide-header">
+                    <h1>プラン比較一覧</h1>
+                </div>
+                <div class="slide-content">
+                    <table class="data-table compact-table">
+                        <thead>
+                            <tr>
+                                <th style="width:20%;">項目</th>
+                                <th style="background-color: #fff0f6; color:#b83280;">梅 BASIC</th>
+                                <th style="background-color: #eef2ff; color:var(--accent-blue);">竹 STANDARD (推奨)</th>
+                                <th style="background-color: #fffde7; color:#ca8a04;">松 PREMIUM</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><th>費用(税別)</th><td><strong>120万円</strong></td><td><strong>200万円</strong></td><td><strong>350万円</strong></td></tr>
+                            <tr><th>制作範囲</th><td>LP 1ページ</td><td>LP + サブ3ページ</td><td>LP + サブ6ページ</td></tr>
+                            <tr><th>修正ラウンド</th><td>最大2回</td><td>最大3回</td><td>軽微修正 無制限</td></tr>
+                            <tr><th>運用・保守（M1〜M3）</th><td>オプション</td><td>オプション</td><td><span class="highlight-text">公開後3ヶ月分 含む</span></td></tr>
+                            <tr><th>スチール写真インタビュー</th><td>オプション</td><td>オプション</td><td><span class="highlight-text">含む</span></td></tr>
+                            <tr><th>プロモーション（S1〜S3）</th><td colspan="3" style="text-align:center;">全プラン共通でオプション</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+            <footer class="slide-footer">
+                <div class="presenter"></div>
+                <div class="page-number">08</div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- スライド09: 梅プラン詳細 -->
+    <div class="slide-wrapper">
+        <div class="slide">
+            <header class="slide-top-header">
+                <div class="client-info">弁護士法人あいち刑事事件総合法律事務所東京支部 御中<br>在日韓国人向け法律相談LP制作企画案</div>
+            </header>
+            <main class="slide-main-content">
+                <div class="slide-header">
+                    <h1>🌸 梅プラン (Basic) 詳細 - 120万円 (税別)</h1>
+                </div>
+                <div class="slide-content plan-detail-card">
+                    <h4>ページ構成</h4>
+                    <ul><li>メインLP 1ページのみ（A案／B案 どちらのコンセプトでも制作可能）</li></ul>
+                    
+                    <h4>コンテンツ範囲（例）</h4>
+                    <ul>
+                        <li>緊急事態6つのシナリオ対応案内（A案） / 専門性カード6枚（B案）</li>
+                        <li>24時間サポートシステム紹介</li>
+                        <li>韓日法律差異 基礎情報（4項目）</li>
+                        <li>無料相談申込フォーム／メール登録フォーム</li>
+                    </ul>
+                    
+                    <h4>更新方法・納品形式</h4>
+                    <ul>
+                        <li>静的HTML（korean-section.zip）納品</li>
+                        <li>Quick Start Guide + Update Cheat Sheet（PDF 2〜3p）</li>
+                    </ul>
+                    
+                    <h4>修正ポリシー</h4>
+                    <ul>
+                        <li>軽微修正：基本料金内、修正ラウンド：最大2回（初稿提出後30日以内）</li>
+                        <li>構造変更（セクション追加等）は別途お見積り</li>
+                    </ul>
+                </div>
+            </main>
+            <footer class="slide-footer">
+                <div class="presenter"></div>
+                <div class="page-number">09</div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- スライド10: 竹プラン詳細 -->
+    <div class="slide-wrapper">
+        <div class="slide">
+            <header class="slide-top-header">
+                <div class="client-info">弁護士法人あいち刑事事件総合法律事務所東京支部 御中<br>在日韓国人向け法律相談LP制作企画案</div>
+            </header>
+            <main class="slide-main-content">
+                <div class="slide-header">
+                    <h1>🎋 竹プラン (Standard) 詳細 - 200万円 (税別)</h1>
+                </div>
+                <div class="slide-content plan-detail-card">
+                    <h4>ページ構成</h4>
+                    <ul>
+                        <li>メインLP 1ページ + サブページ3ページ</li>
+                        <li>サブページ例：取扱分野／料金・費用／緊急対応Q&A 等</li>
+                        <li>A案／B案 いずれも対応（推奨例：B案をベースに拡張）</li>
+                    </ul>
+                    
+                    <h4>コンテンツ範囲</h4>
+                    <ul>
+                        <li>刑事・民事・労働・家族・債務・ビザ関連（6分野）概説（韓国語 + 韓日法差異）</li>
+                        <li>料金・費用ページ（韓国語対応・分割払い・海外送金対応明記）</li>
+                        <li>緊急対応・Q&A（ビザ影響情報など）</li>
+                        <li>コンテンツ追加用HTMLテンプレート提供</li>
+                    </ul>
+                    
+                    <h4>修正ポリシー</h4>
+                    <ul>
+                        <li>軽微修正：基本料金内</li>
+                        <li>修正ラウンド：最大3回（初稿提出後45日以内）</li>
+                        <li>構造変更は別途お見積り</li>
+                    </ul>
+                </div>
+            </main>
+            <footer class="slide-footer">
+                <div class="presenter"></div>
+                <div class="page-number">10</div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- スライド11: 松プラン詳細 -->
+    <div class="slide-wrapper">
+        <div class="slide">
+            <header class="slide-top-header">
+                <div class="client-info">弁護士法人あいち刑事事件総合法律事務所東京支部 御中<br>在日韓国人向け法律相談LP制作企画案</div>
+            </header>
+            <main class="slide-main-content">
+                <div class="slide-header">
+                    <h1>🌲 松プラン (Premium) 詳細 - 350万円 (税別)</h1>
+                </div>
+                <div class="slide-content plan-detail-card">
+                    <h4>ページ構成</h4>
+                    <ul>
+                        <li>メインLP 1ページ + サブページ 6ページ</li>
+                        <li>（竹プラン内容 + 事務所紹介／法差異専門分析／成功事例 等）</li>
+                    </ul>
+                    
+                    <h4>プレミアム特典</h4>
+                    <ul>
+                        <li><span class="highlight-text">スチール写真インタビュー 含む</span><br><small>プロフィール撮影 (5〜10カット)／テキストインタビュー (Q&A 10問)</small></li>
+                        <li><span class="highlight-text">公開後3ヶ月間：M1〜M3 運用・保守一式を含む</span><br><small>（ライトメンテ／月1本コンテンツ／GA4・SCレポート＆改善提案）</small></li>
+                    </ul>
+                    
+                    <h4>修正ポリシー</h4>
+                    <ul>
+                        <li>制作期間中の<span class="highlight-text">軽微修正は無制限</span></li>
+                        <li>構造変更（セクション追加等）は別途お見積り</li>
+                    </ul>
+                    
+                    <h4>更新方法・納品形式</h4>
+                    <ul>
+                        <li>静的HTML一式（korean-section.zip）を納品</li>
+                        <li>公開後3ヶ月間は当社側で更新代行（M1〜M3相当）</li>
+                    </ul>
+                </div>
+            </main>
+            <footer class="slide-footer">
+                <div class="presenter"></div>
+                <div class="page-number">11</div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- スライド12: 追加オプション（プロモーション） -->
+    <div class="slide-wrapper">
+        <div class="slide">
+            <header class="slide-top-header">
+                <div class="client-info">弁護士法人あいち刑事事件総合法律事務所東京支部 御中<br>在日韓国人向け法律相談LP制作企画案</div>
+            </header>
+            <main class="slide-main-content">
+                <div class="slide-header">
+                    <h1>追加オプション（プロモーション）</h1>
+                </div>
+                <div class="slide-content">
+                    <table class="data-table compact-table">
+                        <thead>
+                            <tr>
+                                <th style="width:15%">カテゴリ</th>
+                                <th style="width:25%">オプション名</th>
+                                <th>内容</th>
+                                <th style="width:18%">費用 (税別)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="cat-promo">KOC</td>
+                                <td><strong>S1: KOCベーシック</strong></td>
+                                <td>一般ユーザーによるSNS自然拡散：10投稿保証<small class="why">低コストで自然な初期露出をテストしたい場合に最適</small></td>
+                                <td>+50万円</td>
+                            </tr>
+                            <tr>
+                                <td class="cat-promo">KOC+KOL</td>
+                                <td><strong>S2: KOC＋ブログ連携</strong></td>
+                                <td>KOC投稿10件＋ネイバーブログ等 長文コラム5本制作＆掲載<small class="why">自然拡散に加え、検索で見つかる長文資産も欲しいときに</small></td>
+                                <td>+100万円</td>
+                            </tr>
+                            <tr>
+                                <td class="cat-promo">KOL</td>
+                                <td><strong>S3: KOLブースト</strong></td>
+                                <td>KOL 3名（フォロワー5万〜）起用＋カードニュース/ショート動画制作<small class="why">短期で大きな露出と信頼性を獲得したい場合に</small></td>
+                                <td>+150〜300万円</td>
+                            </tr>
+                            <tr>
+                                <td class="cat-ad">広告運用</td>
+                                <td><strong>P1: リスティング広告スターター</strong></td>
+                                <td>Google検索広告の初期設定・CV計測・1ヶ月運用＋レポート<small class="why">公開初期にCVRと問合せ数を確認したい場合に必須</small></td>
+                                <td>運用費:+15万円<br><small>+媒体費(実費)</small></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+            <footer class="slide-footer">
+                <div class="presenter"></div>
+                <div class="page-number">12</div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- スライド13: 追加オプション（コンテンツ/運用） -->
+    <div class="slide-wrapper">
+        <div class="slide">
+            <header class="slide-top-header">
+                <div class="client-info">弁護士法人あいち刑事事件総合法律事務所東京支部 御中<br>在日韓国人向け法律相談LP制作企画案</div>
+            </header>
+            <main class="slide-main-content">
+                <div class="slide-header">
+                    <h1>追加オプション（コンテンツ/運用）</h1>
+                </div>
+                <div class="slide-content">
+                    <table class="data-table compact-table">
+                        <thead>
+                            <tr>
+                                <th style="width:15%">カテゴリ</th>
+                                <th style="width:28%">オプション名</th>
+                                <th>内容</th>
+                                <th style="width:15%">費用 (税別)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="cat-content">コンテンツ</td>
+                                <td><strong>スチール写真インタビュー</strong></td>
+                                <td>プロカメラマン撮影＋専門Q&A記事で弁護士の信頼感をビジュアル化<small class="why">松プランは費用込み。人物の信頼性を高めたい場合に</small></td>
+                                <td>+50万円</td>
+                            </tr>
+                             <tr>
+                                <td class="cat-content">コンテンツ</td>
+                                <td><strong>映像インタビュー制作</strong></td>
+                                <td>本格的紹介映像制作（字幕付）。SNS/YouTubeでも活用可能<small class="why">他社を圧倒する動画資産を作りたいなら</small></td>
+                                <td>+120万円</td>
+                            </tr>
+                            <tr>
+                                <td class="cat-ops">運用・保守</td>
+                                <td><strong>M1: ライトメンテナンス</strong></td>
+                                <td>月1回までの軽微更新（テキスト差替え、連絡先変更 等）<small class="why">HTMLの簡単な修正を任せたい場合に</small></td>
+                                <td>3万円/月</td>
+                            </tr>
+                            <tr>
+                                <td class="cat-ops">運用・保守</td>
+                                <td><strong>M2: コンテンツリフレッシュ</strong></td>
+                                <td>月1本（〜800字程度）の追記事・FAQ更新<small class="why">継続的に情報発信しSEOを育てたい場合に</small></td>
+                                <td>5万円/月</td>
+                            </tr>
+                            <tr>
+                                <td class="cat-ops">運用・保守</td>
+                                <td><strong>M3: SEO & レポート</strong></td>
+                                <td>GA4／Search Console 簡易レポート + 改善提案／月1回報告<small class="why">定期的な改善レポートが必要な場合に</small></td>
+                                <td>7万円/月</td>
+            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+            <footer class="slide-footer">
+                <div class="presenter"></div>
+                <div class="page-number">13</div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- スライド14: 当社独自の提供価値 -->
+    <div class="slide-wrapper">
+        <div class="slide">
+            <header class="slide-top-header">
+                <div class="client-info">弁護士法人あいち刑事事件総合法律事務所東京支部 御中<br>在日韓国人向け法律相談LP制作企画案</div>
+            </header>
+            <main class="slide-main-content">
+                <div class="slide-header">
+                    <h1>当社独自の提供価値</h1>
+                </div>
+                <div class="slide-content creative-grid-2">
+                    <div class="grid-item">
+                        <h3>① 17年のインバウンドマーケティング実績</h3>
+                        <ul>
+                            <li>在日韓国人向けプロモーションを17年間蓄積した運用データ</li>
+                            <li>多言語 SEO × SNS 運用ノウハウでターゲット流入を最大化</li>
+                            <li>CVR を高めるクリエイティブ最適化フレームワーク</li>
+                            <li>KPI 設計〜効果測定までワンストップで支援</li>
+                        </ul>
+                    </div>
+                    <div class="grid-item">
+                        <h3>② "法律専門家 + コンテンツ専門家" 協業体制</h3>
+                        <ul>
+                            <li><strong>クライアント（貴事務所）:</strong><br>専門法律知識提供、実際相談事例発掘、法的正確性検討</li>
+                            <li><strong>当社:</strong><br>理解しやすいコンテンツ企画、視覚的インフォグラフィック、拡散可能なフォーマット加工</li>
+                        </ul>
+                    </div>
+                </div>
+            </main>
+            <footer class="slide-footer">
+                <div class="presenter"></div>
+                <div class="page-number">14</div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- スライド15: B2B/パートナーシップ戦略 -->
+    <div class="slide-wrapper">
+        <div class="slide">
+            <header class="slide-top-header">
+                <div class="client-info">弁護士法人あいち刑事事件総合法律事務所東京支部 御中<br>在日韓国人向け法律相談LP制作企画案</div>
+            </header>
+            <main class="slide-main-content">
+                <div class="slide-header">
+                    <h1>LP活用・展開戦略（参考）</h1>
+                    <h2>制作したコンテンツを資産として活用した展開アイデア</h2>
+                </div>
+                <div class="slide-content creative-grid-2">
+                    <div class="grid-item">
+                        <h3>公的機関・コミュニティ連携活用例</h3>
+                        <ul>
+                            <li><strong>駐日韓国大使館・総領事館:</strong> 緊急時の公式連絡先として連携可能</li>
+                            <li><strong>在日本大韓民国民団 (民団):</strong> 各支部での法律相談会やセミナー共同開催</li>
+                            <li><strong>韓国学校・大学留学生会:</strong> 学生・保護者向け法的リスク啓蒙活動</li>
+                        </ul>
+                    </div>
+                    <div class="grid-item">
+                        <h3>企業・メディア連携活用例</h3>
+                        <ul>
+                            <li><strong>韓国系企業:</strong> 日本駐在員向け法律顧問サービス展開</li>
+                            <li><strong>韓国語メディア:</strong> 法律コラム連載で専門性の周知</li>
+                            <li><strong>KOC/KOL活用:</strong> コミュニティ内での認知度・信頼性向上</li>
+                        </ul>
+                    </div>
+                </div>
+            </main>
+            <footer class="slide-footer">
+                <div class="presenter"></div>
+                <div class="page-number">15</div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- スライド16: 契約・運用条件 -->
+    <div class="slide-wrapper">
+        <div class="slide">
+            <header class="slide-top-header">
+                <div class="client-info">弁護士法人あいち刑事事件総合法律事務所東京支部 御中<br>在日韓国人向け法律相談LP制作企画案</div>
+            </header>
+            <main class="slide-main-content">
+                <div class="slide-header">
+                    <h1>契約・運用条件（重要事項）</h1>
+                </div>
+                <div class="slide-content text-content">
+                    <ul>
+                        <li><strong>成果物検収・校了後の対応：</strong><br>検収完了（校了）後に発生する更新・修正は、保守プラン（M1〜M3）または個別お見積りにて対応いたします。</li>
+                        <li><strong>著作権・使用許諾：</strong><br>本制作物に使用する画像・フォント・アイコン等のライセンスは、本LP内での使用に限ります。二次利用をご希望の場合は別途ご相談ください。</li>
+                        <li><strong>連絡・フィードバック期限：</strong><br>当社からの校正依頼送付後、10営業日以内にご回答が無い場合、納期が延長されるか、または内容確定として進行する場合があります。</li>
+                        <li><strong>素材提供責任・法的監修：</strong><br>法律的内容の正確性確認および法的監修は貴所の責任範囲となります。当社は法律監修費用を含みません。</li>
+                        <li><strong>大幅変更・新規機能追加：</strong><br>セクション追加／レイアウト再設計／新規フォーム実装などの構造変更は別途お見積りとなります。</li>
+                        <li><strong>CMSに関する事項：</strong><br>CMSソフトウェアの新規提供・開発は本提案の範囲外です。更新は静的HTML差替え、または当社の更新代行にて対応いたします。</li>
+                    </ul>
+                </div>
+            </main>
+            <footer class="slide-footer">
+                <div class="presenter"></div>
+                <div class="page-number">16</div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- スライド17: 結論 -->
+    <div class="slide-wrapper">
+        <div class="slide">
+            <header class="slide-top-header">
+                <div class="client-info">弁護士法人あいち刑事事件総合法律事務所東京支部 御中<br>在日韓国人向け法律相談LP制作企画案</div>
+            </header>
+            <main class="slide-main-content">
+                <div class="slide-header">
+                    <h1>ご提案の結論</h1>
+                </div>
+                <div class="slide-content conclusion-slide">
+                    <p>本企画案は、単なるウェブサイト制作ではありません。<br>貴事務所が<span class="highlight-text">「在日韓国人向け法律相談」という未開拓市場における先駆者</span>となるための、包括的な事業戦略です。</p>
+                    <p>貴事務所の卓越した法律専門性と、当社の17年間の文化・マーケティングノウハウを融合させ、競合他社が追随できない<span class="highlight-text">「唯一無二の信頼」</span>を共に創造いたします。</p>
+                    <p>既存の優れた専門性に「在日韓国人・朝鮮人特化」という明確な差別化を加え、新規顧客層確保とブランド価値向上を同時に達成できる戦略的ソリューションです。</p>
+                    <div class="conclusion-cta">
+                        <strong>この重要な第一歩を、ぜひ私達と共にお進めいただけますよう、謹んでお願い申し上げます。</strong>
+                    </div>
+                </div>
+            </main>
+            <footer class="slide-footer">
+                <div class="presenter"></div>
+                <div class="page-number">17</div>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide-wrapper');
+        let currentSlide = 0;
+
+        function showSlide(n) {
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === n);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowRight' || event.key === ' ') {
+                nextSlide();
+            } else if (event.key === 'ArrowLeft') {
+                prevSlide();
+            }
+        });
+
+        document.body.addEventListener('click', (event) => {
+            if (event.target.closest('a, button, details')) return;
+            const rect = document.body.getBoundingClientRect();
+            const clickX = event.clientX - rect.left;
+            const midPoint = rect.width / 2;
+            
+            if (clickX > midPoint) {
+                nextSlide();
+            } else {
+                prevSlide();
+            }
+        });
+
+        showSlide(currentSlide);
+    </script>
+
+</body>
+</html>
