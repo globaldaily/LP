@@ -2,854 +2,183 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="在日韓国人・朝鮮人のための韓国語専門の法律相談。刑事事件、交通事故、離婚問題などに24時間365日対応。初回相談無料。">
+    <meta name="keywords" content="弁護士, 法律相談, 韓国語, 在日韓国人, 刑事事件, 交通事故, 東京">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>在日韓国人・朝鮮人のための総合法律相談 | 韓国語専門弁護士 | あいち刑事事件総合法律事務所</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
         :root {
-            --slate-900: #0f172a;
-            --slate-800: #1e293b;
-            --slate-700: #334155;
-            --slate-600: #475569;
-            --slate-400: #94a3b8;
-            --slate-300: #cbd5e1;
-            --slate-200: #e2e8f0;
-            --slate-100: #f1f5f9;
-            --slate-50: #f8fafc;
-            --white: #ffffff;
-            --amber-600: #d97706;
-            --amber-500: #f59e0b;
-            --amber-400: #fbbf24;
-            --amber-100: #fef3c7;
-            --emerald-600: #059669;
-            --emerald-100: #d1fae5;
-            --blue-600: #2563eb;
-            --blue-100: #dbeafe;
-            --red-600: #dc2626;
-            --red-100: #fee2e2;
-            --gradient-slate: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            --gradient-light: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        }
-        
-        body {
-            font-family: 'Inter', 'Noto Sans JP', 'Noto Sans KR', sans-serif;
-            line-height: 1.6;
-            color: var(--slate-700);
-            background-color: var(--white);
-            font-weight: 400;
-            -webkit-font-smoothing: antialiased;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-        
-        /* Header with Navigation */
-        .header {
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--white);
-            padding: 16px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .header-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            margin-bottom: 12px;
-        }
-        
-        .logo {
-            font-size: 1.1rem;
-            font-weight: 600;
-            letter-spacing: -0.025em;
-        }
-        
-        .logo-highlight {
-            color: var(--amber-400);
-            font-weight: 700;
-        }
-        
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-        }
-        
-        .phone-action {
-            color: var(--amber-400);
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .phone-action:hover {
-            color: var(--amber-300);
-        }
-        
-        .lang-selector {
-            display: flex;
-            gap: 8px;
-        }
-        
-        .lang-option {
-            padding: 6px 16px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            background: transparent;
-            color: var(--white);
-            border-radius: 20px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 500;
-            font-size: 0.9rem;
-        }
-        
-        .lang-option.active {
-            background: var(--white);
-            color: var(--slate-900);
-        }
-        
-        /* Navigation Menu */
-        .nav-menu {
-            display: flex;
-            gap: 32px;
-            align-items: center;
-            margin-top: 8px;
-        }
-        
-        .nav-link {
-            color: var(--white);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            position: relative;
-            padding: 4px 0;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--amber-400);
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        
-        .nav-link:hover {
-            color: var(--amber-400);
-        }
-        
-        /* Hero Section - Updated for General Legal Services */
-        .hero {
-            background: var(--gradient-slate);
-            color: var(--white);
-            padding: 140px 0 80px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 70% 30%, rgba(245, 158, 11, 0.08) 0%, transparent 50%);
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        .hero-badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 10px 24px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            letter-spacing: 0.05em;
-            margin-bottom: 24px;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 24px;
-            letter-spacing: -0.025em;
-        }
-        
-        .hero-subtitle {
-            font-size: 1.3rem;
-            color: rgba(255, 255, 255, 0.95);
-            margin-bottom: 20px;
-            font-weight: 400;
-        }
-        
-        .hero-korean {
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 40px;
-            font-weight: 400;
-        }
-        
-        .market-size {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-        }
-        
-        .market-size .highlight {
-            color: var(--amber-400);
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-        
-        .hero-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 24px;
-            margin-bottom: 40px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .hero-feature {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 1rem;
-            font-weight: 500;
-        }
-        
-        .feature-icon {
-            width: 32px;
-            height: 32px;
-            background: var(--amber-500);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-weight: 600;
-            flex-shrink: 0;
-        }
-        
-        .hero-cta {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .cta-primary {
-            background: var(--amber-500);
-            color: var(--slate-900);
-            padding: 18px 36px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .cta-primary:hover {
-            background: var(--amber-400);
-            transform: translateY(-2px);
-        }
-        
-        .cta-secondary {
-            background: transparent;
-            color: var(--white);
-            padding: 18px 36px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .cta-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-        
-        /* Emergency Scenarios Section (A案) */
-        .emergency-scenarios {
-            background: var(--white);
-            padding: 80px 0;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--slate-900);
-            margin-bottom: 16px;
-            letter-spacing: -0.025em;
-        }
-        
-        .section-subtitle {
-            font-size: 1.1rem;
-            color: var(--slate-600);
-            font-weight: 400;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .scenario-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 24px;
-        }
-        
-        .scenario-card {
-            background: var(--white);
-            padding: 32px;
-            border-radius: 16px;
-            border: 2px solid var(--slate-200);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .scenario-card.urgent {
-            border-color: var(--red-600);
-            background: var(--red-100);
-        }
-        
-        .scenario-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-xl);
-        }
-        
-        .scenario-icon {
-            font-size: 2.5rem;
-            margin-bottom: 16px;
-        }
-        
-        .scenario-card h3 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--slate-900);
-            margin-bottom: 12px;
-        }
-        
-        .scenario-card p {
-            color: var(--slate-600);
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-        
-        .cta-emergency {
-            margin-top: auto;
-        }
-        
-        .cta-emergency a {
-            background: var(--red-600);
-            color: var(--white);
-            padding: 12px 24px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-block;
-            transition: all 0.3s ease;
-        }
-        
-        .cta-emergency a:hover {
-            background: var(--red-700);
-            transform: translateY(-2px);
-        }
-        
-        /* Legal Areas (取扱分野) */
-        .legal-areas {
-            background: var(--slate-50);
-            padding: 80px 0;
-        }
-        
-        .area-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-            margin-top: 60px;
-        }
-        
-        .area-card {
-            background: var(--white);
-            padding: 32px;
-            border-radius: 16px;
-            border: 1px solid var(--slate-200);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .area-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--amber-500);
-        }
-        
-        .area-icon {
-            width: 56px;
-            height: 56px;
-            background: var(--slate-100);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            transition: all 0.3s ease;
-        }
-        
-        .area-card:hover .area-icon {
-            background: var(--amber-100);
-        }
-        
-        .area-card h3 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--slate-900);
-            margin-bottom: 12px;
-        }
-        
-        .area-card p {
-            color: var(--slate-600);
-            line-height: 1.6;
-        }
-        
-        /* Legal Differences Enhanced */
-        .legal-differences-enhanced {
-            background: var(--white);
-            padding: 80px 0;
-        }
-        
-        .comparison-infographic {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 32px;
-            margin-top: 60px;
-        }
-        
-        .comparison-item {
-            background: var(--slate-50);
-            padding: 32px;
-            border-radius: 16px;
-            border: 1px solid var(--slate-200);
-        }
-        
-        .comparison-item h3 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--slate-900);
-            margin-bottom: 24px;
-            text-align: center;
-        }
-        
-        .comparison-visual {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 20px;
-            gap: 20px;
-        }
-        
-        .korea-side, .japan-side {
-            flex: 1;
-            text-align: center;
-            padding: 20px;
-            background: var(--white);
-            border-radius: 12px;
-            border: 1px solid var(--slate-200);
-        }
-        
-        .flag {
-            font-size: 2rem;
-            display: block;
-            margin-bottom: 12px;
-        }
-        
-        .duration, .impact {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--slate-900);
-        }
-        
-        .vs {
-            font-size: 1.2rem;
-            font-weight: 800;
-            color: var(--slate-400);
-        }
-        
-        .impact-note {
-            background: var(--amber-100);
-            padding: 12px;
-            border-radius: 8px;
-            font-weight: 600;
-            color: var(--amber-900);
-            text-align: center;
-        }
-        
+            --slate-900: #0f172a; --slate-800: #1e293b; --slate-700: #334155; --slate-600: #475569; --slate-400: #94a3b8; --slate-300: #cbd5e1; --slate-200: #e2e8f0; --slate-100: #f1f5f9; --slate-50: #f8fafc; --white: #ffffff; --amber-600: #d97706; --amber-500: #f59e0b; --amber-400: #fbbf24; --amber-100: #fef3c7; --amber-900: #78350f; --emerald-600: #059669; --emerald-800: #065f46; --emerald-200: #a7f3d0; --emerald-100: #d1fae5; --red-600: #dc2626; --red-700: #b91c1c; --red-100: #fee2e2; --gradient-slate: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', 'Noto Sans JP', 'Noto Sans KR', sans-serif; line-height: 1.6; color: var(--slate-700); background-color: var(--white); font-weight: 400; -webkit-font-smoothing: antialiased; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* Header & Navigation */
+        .header { background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); color: var(--white); padding: 16px 0; position: fixed; width: 100%; top: 0; z-index: 1000; }
+        .header-content { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .header-top { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+        .logo { font-size: 1.1rem; font-weight: 600; }
+        .logo-highlight { color: var(--amber-400); font-weight: 700; }
+        .header-actions { display: flex; align-items: center; gap: 24px; }
+        .phone-action { color: var(--amber-400); text-decoration: none; font-size: 1.1rem; font-weight: 600; transition: color 0.3s ease; }
+        .phone-action:hover { color: var(--amber-300); }
+        .lang-selector { display: flex; gap: 8px; }
+        .lang-option { padding: 6px 16px; border: 1px solid rgba(255, 255, 255, 0.2); background: transparent; color: var(--white); border-radius: 20px; cursor: pointer; transition: all 0.3s ease; font-weight: 500; font-size: 0.9rem; }
+        .lang-option.active { background: var(--white); color: var(--slate-900); }
+        .nav-menu { display: flex; gap: 24px; align-items: center; width: 100%; justify-content: center; flex-wrap: wrap; }
+        .nav-link { color: var(--white); text-decoration: none; font-size: 0.95rem; font-weight: 500; position: relative; padding: 4px 0; transition: color 0.3s ease; }
+        .nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--amber-400); transition: width 0.3s ease; }
+        .nav-link:hover { color: var(--amber-400); }
+        .nav-link:hover::after { width: 100%; }
+
+        /* Hero Section */
+        .hero { background: var(--gradient-slate); color: var(--white); padding: 180px 0 80px; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 70% 30%, rgba(245, 158, 11, 0.08) 0%, transparent 50%); }
+        .hero-content { position: relative; z-index: 1; text-align: center; max-width: 900px; margin: 0 auto; }
+        .hero-badge { display: inline-block; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); padding: 10px 24px; border-radius: 50px; font-size: 0.9rem; font-weight: 500; margin-bottom: 24px; }
+        .hero h1 { font-size: 3.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 24px; }
+        .hero-subtitle { font-size: 1.3rem; color: rgba(255, 255, 255, 0.95); margin-bottom: 20px; }
+        .hero-korean { font-size: 1.1rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 40px; }
+        .market-size { font-size: 1.2rem; margin-bottom: 40px; color: rgba(255,255,255,0.9); }
+        .market-size .highlight { color: var(--amber-400); font-size: 1.5rem; font-weight: 700; }
+        .hero-features { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-bottom: 40px; max-width: 800px; margin: 0 auto 40px; }
+        .hero-feature { display: flex; align-items: center; justify-content: center; gap: 12px; font-size: 1rem; font-weight: 500; }
+        .feature-icon { width: 32px; height: 32px; background: var(--amber-500); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--white); font-weight: 600; flex-shrink: 0; }
+        .feature-icon svg { width: 18px; height: 18px; }
+        .feature-icon-text { font-size: 1.2rem; font-weight: 700; }
+        .hero-cta { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .cta-primary { background: var(--amber-500); color: var(--slate-900); padding: 18px 36px; border-radius: 50px; text-decoration: none; font-size: 1.1rem; font-weight: 600; transition: all 0.3s ease; box-shadow: var(--shadow-lg); }
+        .cta-primary:hover { background: var(--amber-400); transform: translateY(-2px); }
+        .cta-secondary { background: transparent; color: var(--white); padding: 18px 36px; border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 50px; text-decoration: none; font-size: 1.1rem; font-weight: 500; transition: all 0.3s ease; }
+        .cta-secondary:hover { background: rgba(255, 255, 255, 0.1); }
+        
+        /* Section Header */
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-title { font-size: 2.5rem; font-weight: 800; color: var(--slate-900); margin-bottom: 16px; }
+        .section-subtitle { font-size: 1.1rem; color: var(--slate-600); max-width: 600px; margin: 0 auto; }
+
+        /* Emergency Scenarios */
+        .emergency-scenarios { background: var(--white); padding: 80px 0; }
+        .scenario-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 24px; }
+        .scenario-card { background: var(--white); padding: 32px; border-radius: 16px; border: 2px solid var(--slate-200); transition: all 0.3s ease; position: relative; }
+        .scenario-card.urgent { border-color: var(--red-600); background: var(--red-100); }
+        .scenario-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-xl); }
+        .scenario-icon { color: var(--slate-800); margin-bottom: 16px; }
+        .scenario-icon svg { width: 40px; height: 40px; }
+        .scenario-card h3 { font-size: 1.3rem; font-weight: 700; color: var(--slate-900); margin-bottom: 12px; }
+        .scenario-card p { color: var(--slate-600); line-height: 1.6; margin-bottom: 20px; }
+        .cta-emergency a { background: var(--red-600); color: var(--white); padding: 12px 24px; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s ease; }
+        .cta-emergency a:hover { background: var(--red-700); transform: translateY(-2px); }
+
+        /* Legal Areas */
+        .legal-areas { background: var(--slate-50); padding: 80px 0; }
+        .area-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+        .area-card { background: var(--white); padding: 32px; border-radius: 16px; border: 1px solid var(--slate-200); transition: all 0.3s ease; }
+        .area-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--amber-500); }
+        .area-icon { width: 56px; height: 56px; background: var(--slate-100); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; transition: all 0.3s ease; }
+        .area-icon svg { width: 28px; height: 28px; color: var(--slate-700); transition: color 0.3s ease; }
+        .area-card:hover .area-icon { background: var(--amber-100); }
+        .area-card:hover .area-icon svg { color: var(--amber-600); }
+        .area-card h3 { font-size: 1.3rem; font-weight: 700; color: var(--slate-900); margin-bottom: 12px; }
+        .area-card p { color: var(--slate-600); }
+
+        /* Lawyer Profiles */
+        .lawyer-profiles { background: var(--white); padding: 80px 0; }
+        .profile-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; margin-top: 60px; }
+        .profile-card { text-align: center; background: var(--slate-50); padding: 32px; border-radius: 16px; border: 1px solid var(--slate-200); }
+        .profile-photo { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; margin-bottom: 24px; border: 4px solid var(--white); box-shadow: var(--shadow-md); }
+        .profile-name { font-size: 1.4rem; font-weight: 700; color: var(--slate-900); margin-bottom: 8px; }
+        .profile-title { font-size: 1rem; font-weight: 500; color: var(--amber-600); margin-bottom: 16px; }
+        .profile-bio { color: var(--slate-600); line-height: 1.7; }
+
+        /* Legal Differences */
+        .legal-differences-enhanced { background: var(--slate-50); padding: 80px 0; }
+        .comparison-infographic { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 32px; margin-top: 60px; }
+        .comparison-item { background: var(--white); padding: 32px; border-radius: 16px; border: 1px solid var(--slate-200); }
+        .comparison-item h3 { font-size: 1.3rem; font-weight: 700; color: var(--slate-900); margin-bottom: 24px; text-align: center; }
+        .comparison-visual { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; gap: 20px; }
+        .korea-side, .japan-side { flex: 1; text-align: center; padding: 20px; background: var(--slate-50); border-radius: 12px; }
+        .flag { font-size: 2rem; display: block; margin-bottom: 12px; }
+        .duration, .impact { font-size: 1.1rem; font-weight: 700; color: var(--slate-900); }
+        .vs { font-size: 1.2rem; font-weight: 800; color: var(--slate-400); }
+        .impact-note { background: var(--amber-100); padding: 12px; border-radius: 8px; font-weight: 600; color: var(--amber-900); text-align: center; }
+
         /* Market Statistics */
-        .market-stats-section {
-            background: var(--slate-900);
-            color: var(--white);
-            padding: 60px 0;
-        }
-        
-        .market-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 32px;
-            text-align: center;
-        }
-        
-        .stat-card {
-            padding: 32px;
-        }
-        
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--amber-400);
-            margin-bottom: 8px;
-        }
-        
-        .stat-label {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-        
-        .stat-source {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.7);
-        }
-        
+        .market-stats-section { background: var(--slate-900); color: var(--white); padding: 60px 0; }
+        .market-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 32px; text-align: center; }
+        .stat-card { padding: 32px; }
+        .stat-number { font-size: 3rem; font-weight: 800; color: var(--amber-400); margin-bottom: 8px; }
+        .stat-label { font-size: 1.1rem; font-weight: 600; margin-bottom: 4px; }
+        .stat-source { font-size: 0.9rem; color: rgba(255, 255, 255, 0.7); }
+
         /* Success Cases */
-        .success-cases {
-            background: var(--slate-50);
-            padding: 80px 0;
-        }
-        
-        .cases-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-            margin-top: 60px;
-        }
-        
-        .case-card {
-            background: var(--white);
-            padding: 36px;
-            border-radius: 16px;
-            border: 1px solid var(--slate-200);
-            transition: all 0.3s ease;
-        }
-        
-        .case-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .case-type {
-            background: var(--emerald-600);
-            color: var(--white);
-            padding: 6px 16px;
-            border-radius: 16px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            display: inline-block;
-        }
-        
-        .case-content {
-            color: var(--slate-600);
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-        
-        .case-result {
-            background: var(--emerald-100);
-            padding: 16px;
-            border-radius: 8px;
-            font-weight: 600;
-            color: var(--emerald-800);
-            border: 1px solid var(--emerald-200);
-        }
-        
+        .success-cases { background: var(--slate-50); padding: 80px 0; }
+        .cases-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 24px; margin-top: 60px; }
+        .case-card { background: var(--white); padding: 36px; border-radius: 16px; border: 1px solid var(--slate-200); transition: all 0.3s ease; }
+        .case-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+        .case-type { background: var(--emerald-600); color: var(--white); padding: 6px 16px; border-radius: 16px; font-size: 0.8rem; font-weight: 600; margin-bottom: 20px; display: inline-block; }
+        .case-content { color: var(--slate-600); line-height: 1.6; margin-bottom: 20px; }
+        .case-result { background: var(--emerald-100); padding: 16px; border-radius: 8px; font-weight: 600; color: var(--emerald-800); border: 1px solid var(--emerald-200); }
+
         /* Contact Section */
-        .contact-section {
-            background: var(--slate-900);
-            color: var(--white);
-            padding: 80px 0;
-        }
-        
-        .contact-form {
-            background: var(--white);
-            color: var(--slate-700);
-            padding: 48px;
-            border-radius: 20px;
-            max-width: 700px;
-            margin: 40px auto 0;
-            box-shadow: var(--shadow-xl);
-        }
-        
-        .form-title {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--slate-900);
-            margin-bottom: 12px;
-            text-align: center;
-        }
-        
-        .form-subtitle {
-            text-align: center;
-            color: var(--slate-600);
-            margin-bottom: 32px;
-        }
-        
-        .form-group {
-            margin-bottom: 24px;
-        }
-        
-        .form-label {
-            display: block;
-            margin-bottom: 6px;
-            font-weight: 600;
-            color: var(--slate-900);
-        }
-        
-        .form-input {
-            width: 100%;
-            padding: 12px 16px;
-            border: 1px solid var(--slate-300);
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-        
-        .form-input:focus {
-            outline: none;
-            border-color: var(--amber-500);
-        }
-        
-        .form-submit {
-            background: var(--amber-500);
-            color: var(--slate-900);
-            padding: 16px 32px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: 100%;
-        }
-        
-        .form-submit:hover {
-            background: var(--amber-400);
-            transform: translateY(-2px);
-        }
-        
+        .contact-section { background: var(--slate-900); color: var(--white); padding: 80px 0; }
+        .contact-form { background: var(--white); color: var(--slate-700); padding: 48px; border-radius: 20px; max-width: 700px; margin: 40px auto 0; box-shadow: var(--shadow-xl); }
+        .form-title { font-size: 2rem; font-weight: 700; color: var(--slate-900); margin-bottom: 12px; text-align: center; }
+        .form-subtitle { text-align: center; color: var(--slate-600); margin-bottom: 32px; }
+        .form-group { margin-bottom: 24px; }
+        .form-label { display: block; margin-bottom: 6px; font-weight: 600; color: var(--slate-900); }
+        .form-input { width: 100%; padding: 12px 16px; border: 1px solid var(--slate-300); border-radius: 8px; font-size: 1rem; transition: border-color 0.3s ease; }
+        .form-input:focus { outline: none; border-color: var(--amber-500); }
+        .form-submit { background: var(--amber-500); color: var(--slate-900); padding: 16px 32px; border: none; border-radius: 50px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; width: 100%; }
+        .form-submit:hover { background: var(--amber-400); transform: translateY(-2px); }
+
         /* Footer */
-        .footer {
-            background: var(--slate-800);
-            color: var(--white);
-            padding: 60px 0 40px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 32px;
-        }
-        
-        .footer-section h4 {
-            color: var(--amber-400);
-            margin-bottom: 16px;
-            font-weight: 600;
-        }
-        
-        .footer-section ul {
-            list-style: none;
-        }
-        
-        .footer-section li {
-            margin-bottom: 8px;
-            color: rgba(255, 255, 255, 0.8);
-        }
-        
-        .footer-section a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-section a:hover {
-            color: var(--amber-400);
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.6);
-        }
-        
+        .footer { background: var(--slate-800); color: var(--white); padding: 60px 0 40px; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 32px; }
+        .footer-section h4 { color: var(--amber-400); margin-bottom: 16px; font-weight: 600; }
+        .footer-section ul { list-style: none; }
+        .footer-section li { margin-bottom: 8px; color: rgba(255, 255, 255, 0.8);}
+        .footer-section a { color: rgba(255, 255, 255, 0.8); text-decoration: none; transition: color 0.3s ease; }
+        .footer-section a:hover { color: var(--amber-400); }
+        .footer-bottom { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.6); }
+
         /* Mobile Fixed CTA */
-        @media (max-width: 768px) {
-            .mobile-fixed-cta {
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                background: var(--amber-500);
-                padding: 16px;
-                z-index: 999;
-                box-shadow: 0 -4px 12px rgba(0,0,0,0.15);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 16px;
-            }
-            
-            .mobile-fixed-cta a {
-                color: var(--slate-900);
-                text-decoration: none;
-                font-weight: 700;
-                font-size: 1.1rem;
-                display: flex;
-                align-items: center;
-                gap: 8px;
-            }
-            
-            body {
-                padding-bottom: 70px;
-            }
-        }
+        .mobile-fixed-cta { position: fixed; bottom: 0; left: 0; right: 0; background: var(--amber-500); padding: 16px; z-index: 999; box-shadow: 0 -4px 12px rgba(0,0,0,0.15); display: none; justify-content: center; align-items: center; gap: 16px; }
+        .mobile-fixed-cta a { color: var(--slate-900); text-decoration: none; font-weight: 700; font-size: 1.1rem; display: flex; align-items: center; gap: 8px; }
         
         /* Responsive */
         @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 16px;
-            }
-            
-            .nav-menu {
-                flex-wrap: wrap;
-                gap: 16px;
-                justify-content: center;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero-features {
-                grid-template-columns: 1fr;
-                max-width: 300px;
-            }
-            
-            .comparison-visual {
-                flex-direction: column;
-            }
-            
-            .vs {
-                transform: rotate(90deg);
-                margin: 16px 0;
-            }
-            
-            .hero-cta {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .container {
-                padding: 0 16px;
-            }
-            
-            .scenario-grid,
-            .area-grid,
-            .comparison-infographic {
-                grid-template-columns: 1fr;
-            }
-            
-            .cases-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .emergency-scenarios .scenario-card.urgent {
-                animation: pulse 2s infinite;
-            }
+            body { padding-bottom: 70px; /* For mobile CTA */ }
+            .container { padding: 0 16px; }
+            .hero { padding-top: 200px; }
+            .header-top { flex-wrap: wrap; justify-content: space-between; gap: 10px;}
+            .logo, .header-actions { flex: 1 1 50%; }
+            .header-actions { justify-content: flex-end; }
+            .nav-menu { gap: 10px 16px; }
+            .nav-link { font-size: 0.85rem; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero-features { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+            .hero-feature { flex-direction: column; gap: 8px; }
+            .hero-feature span { text-align: center; }
+            .hero-cta { flex-direction: column; align-items: center; }
+            .comparison-visual { flex-direction: column; }
+            .vs { transform: rotate(90deg); margin: 16px 0; }
+            .scenario-grid, .area-grid, .comparison-infographic, .profile-grid, .cases-grid { grid-template-columns: 1fr; }
+            .emergency-scenarios .scenario-card.urgent { animation: pulse 2s infinite; }
         }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.02); }
-            100% { transform: scale(1); }
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.02); } 100% { transform: scale(1); } }
     </style>
 </head>
 <body>
-    <!-- Header with Navigation -->
     <header class="header">
         <div class="container">
             <div class="header-content">
                 <div class="header-top">
                     <div class="logo">
-                        <span class="logo-highlight">AICHI</span> Legal Consultation Tokyo
+                        <span class="logo-highlight">AICHI</span> Legal Consultation
                         <div style="font-size: 0.8rem; opacity: 0.8; font-weight: 400;">韓国語対応総合法律相談</div>
                     </div>
                     <div class="header-actions">
@@ -864,423 +193,326 @@
                     <a href="#home" class="nav-link">トップ</a>
                     <a href="#emergency" class="nav-link">緊急相談</a>
                     <a href="#areas" class="nav-link">取扱分野</a>
+                    <a href="#lawyers" class="nav-link">弁護士紹介</a>
                     <a href="#differences" class="nav-link">韓日法律の違い</a>
-                    <a href="#fees" class="nav-link">料金・費用</a>
-                    <a href="#qa" class="nav-link">Q&A</a>
+                    <a href="#cases" class="nav-link">解決実績</a>
                     <a href="#consultation" class="nav-link">無料相談</a>
                 </nav>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge">約42万人の在日同胞のための</div>
-                <h1>緊急事態を救う<br>韓国語専門弁護士</h1>
-                <p class="hero-subtitle">総合法律相談・あらゆる法的問題に24時間365日対応</p>
-                <p class="hero-korean">긴급상황에서 당신을 구하는 한국어 전문 변호사</p>
-                <p class="market-size">日本で生活する<span class="highlight">42万人</span>の在日韓国人・朝鮮人の法的パートナー</p>
-                
-                <div class="hero-features">
-                    <div class="hero-feature">
-                        <div class="feature-icon">24</div>
-                        <span>24時間365日対応</span>
-                    </div>
-                    <div class="hero-feature">
-                        <div class="feature-icon">🆓</div>
-                        <span>初回相談無料</span>
-                    </div>
-                    <div class="hero-feature">
-                        <div class="feature-icon">🇰🇷</div>
-                        <span>韓国語ネイティブ</span>
-                    </div>
-                    <div class="hero-feature">
-                        <div class="feature-icon">⚖️</div>
-                        <span>総合法律相談</span>
-                    </div>
-                </div>
-                
-                <div class="hero-cta">
-                    <a href="tel:0120-631-881" class="cta-primary">今すぐ無料相談</a>
-                    <a href="#consultation" class="cta-secondary">相談予約フォーム</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Emergency Scenarios Section -->
-    <section class="emergency-scenarios" id="emergency">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">こんな緊急事態、すぐにご相談ください</h2>
-                <p class="section-subtitle">
-                    24時間365日、韓国語で対応いたします
-                </p>
-            </div>
-            
-            <div class="scenario-grid">
-                <div class="scenario-card urgent">
-                    <div class="scenario-icon">🚨</div>
-                    <h3>逮捕・勾留された</h3>
-                    <p>家族が突然逮捕された。韓国語で状況を理解したい。在留資格への影響が心配。</p>
-                    <div class="cta-emergency">
-                        <a href="tel:0120-631-881">今すぐ電話</a>
-                    </div>
-                </div>
-                
-                <div class="scenario-card urgent">
-                    <div class="scenario-icon">🚗</div>
-                    <h3>交通事故を起こした</h3>
-                    <p>人身事故で警察が来ている。どう対応すればいいか分からない。保険会社との交渉も不安。</p>
-                    <div class="cta-emergency">
-                        <a href="tel:0120-631-881">緊急相談</a>
-                    </div>
-                </div>
-                
-                <div class="scenario-card">
-                    <div class="scenario-icon">👮</div>
-                    <h3>警察から呼び出し</h3>
-                    <p>事情聴取の連絡が来た。一人で行くのが不安。何を準備すればいいか分からない。</p>
-                </div>
-                
-                <div class="scenario-card">
-                    <div class="scenario-icon">🏫</div>
-                    <h3>子供が事件に</h3>
-                    <p>学校でトラブル。少年事件になるかもしれない。将来への影響が心配。</p>
-                </div>
-                
-                <div class="scenario-card">
-                    <div class="scenario-icon">💼</div>
-                    <h3>会社でトラブル</h3>
-                    <p>横領の疑いをかけられた。解雇されるかもしれない。在留資格への影響も心配。</p>
-                </div>
-                
-                <div class="scenario-card">
-                    <div class="scenario-icon">🏠</div>
-                    <h3>家庭内の問題</h3>
-                    <p>DVや暴力事件。離婚問題。韓国の家族にも相談できない複雑な状況。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Legal Areas Section -->
-    <section class="legal-areas" id="areas">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">取扱分野</h2>
-                <p class="section-subtitle">
-                    刑事事件から民事・家事まで、あらゆる法的問題に対応
-                </p>
-            </div>
-            
-            <div class="area-grid">
-                <div class="area-card">
-                    <div class="area-icon">⚖️</div>
-                    <h3>刑事事件</h3>
-                    <p>逮捕・勾留・起訴などの刑事手続き全般。暴行、傷害、薬物事件、経済犯罪など。在留資格への影響も含めて総合的にサポート。</p>
-                </div>
-                
-                <div class="area-card">
-                    <div class="area-icon">🚗</div>
-                    <h3>交通事故・交通違反</h3>
-                    <p>人身事故、物損事故、飲酒運転、無免許運転など。保険会社との交渉、示談交渉、刑事処分対応まで一貫してサポート。</p>
-                </div>
-                
-                <div class="area-card">
-                    <div class="area-icon">👨‍👩‍👧‍👦</div>
-                    <h3>家事事件</h3>
-                    <p>離婚、親権、養育費、財産分与、DV保護命令など。韓国と日本の法律の違いを踏まえた適切なアドバイス。</p>
-                </div>
-                
-                <div class="area-card">
-                    <div class="area-icon">💰</div>
-                    <h3>債務整理・破産</h3>
-                    <p>借金問題、自己破産、個人再生、任意整理など。韓国での債務との関係も含めて解決策をご提案。</p>
-                </div>
-                
-                <div class="area-card">
-                    <div class="area-icon">🏢</div>
-                    <h3>労働問題</h3>
-                    <p>不当解雇、残業代請求、パワハラ、労災など。外国人労働者特有の問題にも精通。</p>
-                </div>
-                
-                <div class="area-card">
-                    <div class="area-icon">🛂</div>
-                    <h3>在留資格・ビザ</h3>
-                    <p>在留資格の更新、変更、永住権申請など。刑事事件が在留資格に与える影響についても詳しくご説明。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Legal Differences Enhanced -->
-    <section class="legal-differences-enhanced" id="differences">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">知っておくべき韓日法制度の重要な違い</h2>
-                <p class="section-subtitle">
-                    両国の法律の違いを理解し、適切な対応を
-                </p>
-            </div>
-            
-            <div class="comparison-infographic">
-                <div class="comparison-item">
-                    <h3>逮捕・勾留期間</h3>
-                    <div class="comparison-visual">
-                        <div class="korea-side">
-                            <span class="flag">🇰🇷</span>
-                            <span class="duration">最大30日</span>
-                        </div>
-                        <div class="vs">VS</div>
-                        <div class="japan-side">
-                            <span class="flag">🇯🇵</span>
-                            <span class="duration">最大23日</span>
-                        </div>
-                    </div>
-                    <p class="impact-note">⚠️ 日本の方が短いが、外国人は保釈が困難</p>
-                </div>
-                
-                <div class="comparison-item">
-                    <h3>保釈制度</h3>
-                    <div class="comparison-visual">
-                        <div class="korea-side">
-                            <span class="flag">🇰🇷</span>
-                            <span class="impact">保釈許可率 約75%</span>
-                        </div>
-                        <div class="vs">VS</div>
-                        <div class="japan-side">
-                            <span class="flag">🇯🇵</span>
-                            <span class="impact">保釈許可率 約35%</span>
-                        </div>
-                    </div>
-                    <p class="impact-note">⚠️ 日本では保釈金も高額で審査も厳格</p>
-                </div>
-                
-                <div class="comparison-item">
-                    <h3>前科の影響</h3>
-                    <div class="comparison-visual">
-                        <div class="korea-side">
-                            <span class="flag">🇰🇷</span>
-                            <span class="impact">帰化に影響小</span>
-                        </div>
-                        <div class="vs">VS</div>
-                        <div class="japan-side">
-                            <span class="flag">🇯🇵</span>
-                            <span class="impact">在留資格に重大影響</span>
-                        </div>
-                    </div>
-                    <p class="impact-note">⚠️ 日本では強制送還のリスクも</p>
-                </div>
-                
-                <div class="comparison-item">
-                    <h3>示談の重要性</h3>
-                    <div class="comparison-visual">
-                        <div class="korea-side">
-                            <span class="flag">🇰🇷</span>
-                            <span class="impact">量刑に一定の影響</span>
-                        </div>
-                        <div class="vs">VS</div>
-                        <div class="japan-side">
-                            <span class="flag">🇯🇵</span>
-                            <span class="impact">不起訴の可能性大</span>
-                        </div>
-                    </div>
-                    <p class="impact-note">⚠️ 日本では示談が極めて重要</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Market Statistics -->
-    <section class="market-stats-section">
-        <div class="container">
-            <div class="market-stats">
-                <div class="stat-card">
-                    <div class="stat-number">42万人</div>
-                    <div class="stat-label">在日韓国人・朝鮮人</div>
-                    <div class="stat-source">令和6年法務省データ</div>
-                </div>
-                
-                <div class="stat-card">
-                    <div class="stat-number">1,000件+</div>
-                    <div class="stat-label">韓国語対応実績</div>
-                    <div class="stat-source">当事務所実績</div>
-                </div>
-                
-                <div class="stat-card">
-                    <div class="stat-number">24/365</div>
-                    <div class="stat-label">緊急対応体制</div>
-                    <div class="stat-source">年中無休</div>
-                </div>
-                
-                <div class="stat-card">
-                    <div class="stat-number">98%</div>
-                    <div class="stat-label">顧客満足度</div>
-                    <div class="stat-source">2024年度調査</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Success Cases -->
-    <section class="success-cases">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">解決実績</h2>
-                <p class="section-subtitle">
-                    韓国語での丁寧な対応と専門知識で、多くの事件を解決
-                </p>
-            </div>
-            
-            <div class="cases-grid">
-                <div class="case-card">
-                    <div class="case-type">刑事事件</div>
-                    <div class="case-content">
-                        暴行罪で起訴されたK氏の事件。韓国語での詳細な事情聴取により正当防衛の可能性を発見。被害者との示談交渉も成功し、最終的に不起訴処分を獲得。前科を回避し、在留資格への影響もなし。
-                    </div>
-                    <div class="case-result">✓ 不起訴処分・在留資格維持</div>
-                </div>
-                
-                <div class="case-card">
-                    <div class="case-type">交通事故</div>
-                    <div class="case-content">
-                        人身事故を起こしたL氏。被害者との示談交渉、保険会社との交渉を韓国語でサポート。刑事処分は罰金刑で済み、民事でも適正な賠償で解決。運転免許も維持。
-                    </div>
-                    <div class="case-result">✓ 罰金刑・示談成立・免許維持</div>
-                </div>
-                
-                <div class="case-card">
-                    <div class="case-type">家事事件</div>
-                    <div class="case-content">
-                        DVで悩んでいたP氏の離婚事件。保護命令の申立てから離婚調停まで一貫してサポート。親権も獲得し、養育費も適正額で合意。新しい生活をスタート。
-                    </div>
-                    <div class="case-result">✓ 親権獲得・養育費確保・保護命令</div>
-                </div>
-                
-                <div class="case-card">
-                    <div class="case-type">労働問題</div>
-                    <div class="case-content">
-                        不当解雇されたM氏の労働審判。韓国語での詳細な聞き取りで、会社側の違法行為を立証。解雇撤回と未払い残業代300万円を獲得。職場復帰も実現。
-                    </div>
-                    <div class="case-result">✓ 解雇撤回・残業代獲得・職場復帰</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact-section" id="consultation">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">無料相談申込み</h2>
-                <p class="section-subtitle">
-                    韓国語対応専門弁護士が24時間以内にご連絡いたします
-                </p>
-            </div>
-            
-            <div class="contact-form">
-                <h3 class="form-title">無料相談申込フォーム</h3>
-                <p class="form-subtitle">
-                    お急ぎの方は今すぐお電話ください：0120-631-881
-                </p>
-                
-                <form id="consultationForm">
-                    <div class="form-group">
-                        <label class="form-label" for="name">お名前 *</label>
-                        <input class="form-input" type="text" id="name" name="name" required>
-                    </div>
+    <main>
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-badge">約42万人の在日同胞のための</div>
+                    <h1>緊急事態を救う<br>韓国語専門弁護士</h1>
+                    <p class="hero-subtitle">総合法律相談・あらゆる法的問題に24時間365日対応</p>
+                    <p class="hero-korean">긴급상황에서 당신을 구하는 한국어 전문 변호사</p>
+                    <p class="market-size">日本で生活する<span class="highlight">42万人</span>の在日韓国人・朝鮮人の法的パートナー</p>
                     
-                    <div class="form-group">
-                        <label class="form-label" for="phone">連絡先電話番号 *</label>
-                        <input class="form-input" type="tel" id="phone" name="phone" required>
+                    <div class="hero-features">
+                        <div class="hero-feature">
+                            <div class="feature-icon"><span class="feature-icon-text">24</span></div>
+                            <span>24時間365日対応</span>
+                        </div>
+                        <div class="hero-feature">
+                            <div class="feature-icon">
+                               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-15c-.621 0-1.125-.504-1.125-1.125v-9.75c0-.621.504-1.125 1.125-1.125h.375m15.75 0v.375a.75.75 0 01-.75.75h-.75" /></svg>
+                            </div>
+                            <span>初回相談無料</span>
+                        </div>
+                        <div class="hero-feature">
+                           <div class="feature-icon">
+                               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C13.18 7.061 14.287 7.5 15.5 7.5c1.213 0 2.32-.439 3.166-1.136" /></svg>
+                           </div>
+                            <span>韓国語ネイティブ</span>
+                        </div>
+                        <div class="hero-feature">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>
+                            </div>
+                            <span>総合法律相談</span>
+                        </div>
                     </div>
-                    
-                    <div class="form-group">
-                        <label class="form-label" for="email">メールアドレス</label>
-                        <input class="form-input" type="email" id="email" name="email">
+                    <div class="hero-cta">
+                        <a href="tel:0120-631-881" class="cta-primary">今すぐ無料相談</a>
+                        <a href="#consultation" class="cta-secondary">相談予約フォーム</a>
                     </div>
-                    
-                    <div class="form-group">
-                        <label class="form-label" for="case-type">相談内容 *</label>
-                        <select class="form-input" id="case-type" name="case-type" required>
-                            <option value="">選択してください</option>
-                            <option value="criminal">刑事事件</option>
-                            <option value="traffic">交通事故・交通違反</option>
-                            <option value="family">離婚・家事事件</option>
-                            <option value="labor">労働問題</option>
-                            <option value="debt">債務整理</option>
-                            <option value="visa">在留資格・ビザ</option>
-                            <option value="other">その他</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="form-label" for="urgency">緊急度 *</label>
-                        <select class="form-input" id="urgency" name="urgency" required>
-                            <option value="">選択してください</option>
-                            <option value="emergency">緊急（逮捕・勾留中）</option>
-                            <option value="urgent">至急（近日中に対応必要）</option>
-                            <option value="normal">通常（相談・準備段階）</option>
-                            <option value="preventive">予防的相談</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="form-label" for="consultation-method">相談希望方法 *</label>
-                        <select class="form-input" id="consultation-method" name="consultation-method" required>
-                            <option value="">選択してください</option>
-                            <option value="phone">電話相談</option>
-                            <option value="office">事務所面談</option>
-                            <option value="video">オンライン相談</option>
-                            <option value="detention">拘置所・警察署面会</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="form-label" for="details">詳細・ご相談内容</label>
-                        <textarea class="form-input" id="details" name="details" rows="4" 
-                                placeholder="現在の状況、ご心配な点などを詳しくお書きください"></textarea>
-                    </div>
-                    
-                    <button type="submit" class="form-submit">
-                        無料相談を申し込む
-                    </button>
-                </form>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
+        <section class="emergency-scenarios" id="emergency">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">こんな緊急事態、すぐにご相談ください</h2>
+                    <p class="section-subtitle">24時間365日、韓国語で対応いたします</p>
+                </div>
+                <div class="scenario-grid">
+                    <div class="scenario-card urgent">
+                        <div class="scenario-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" /></svg></div>
+                        <h3>逮捕・勾留された</h3>
+                        <p>家族が突然逮捕された。韓国語で状況を理解したい。在留資格への影響が心配。</p>
+                        <div class="cta-emergency"><a href="tel:0120-631-881">今すぐ電話</a></div>
+                    </div>
+                    <div class="scenario-card urgent">
+                        <div class="scenario-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.125-.504 1.125-1.125V14.25m-17.25 4.5v-1.875a3.375 3.375 0 013.375-3.375h9.75a3.375 3.375 0 013.375 3.375v1.875" /></svg></div>
+                        <h3>交通事故を起こした</h3>
+                        <p>人身事故で警察が来ている。どう対応すればいいか分からない。保険会社との交渉も不安。</p>
+                        <div class="cta-emergency"><a href="tel:0120-631-881">緊急相談</a></div>
+                    </div>
+                    <div class="scenario-card">
+                        <div class="scenario-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.125 2.25h-4.5c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9M10.125 2.25h.375a9 9 0 019 9v.375M10.125 2.25A3.375 3.375 0 0113.5 5.625v1.5c0 .621.504 1.125 1.125 1.125h1.5a3.375 3.375 0 013.375 3.375M9 15l2.25 2.25L15 12" /></svg></div>
+                        <h3>警察から呼び出し</h3>
+                        <p>事情聴取の連絡が来た。一人で行くのが不安。何を準備すればいいか分からない。</p>
+                    </div>
+                    <div class="scenario-card">
+                        <div class="scenario-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0l-.062-.007a1.992 1.992 0 01-.924-2.417l.49-1.96a1.992 1.992 0 013.832.555l-.344 1.372m6.168 0a3 3 0 10-5.864 0m5.864 0l-.062-.007a1.992 1.992 0 00-1.788-1.87M15.428 11.007l-.062-.007a1.992 1.992 0 01-1.788-1.87m3.734 1.877l-.062-.007a1.992 1.992 0 00-1.788-1.87m-1.932 0a3 3 0 10-5.864 0m5.864 0l-.062-.007a1.992 1.992 0 01-1.854-1.921l.49-1.96a1.992 1.992 0 013.832.555l-.344 1.372" /></svg></div>
+                        <h3>子供が事件に</h3>
+                        <p>学校でトラブル。少年事件になるかもしれない。将来への影響が心配。</p>
+                    </div>
+                    <div class="scenario-card">
+                        <div class="scenario-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h6M9 11.25h6M9 15.75h6" /></svg></div>
+                        <h3>会社でトラブル</h3>
+                        <p>横領の疑いをかけられた。解雇されるかもしれない。在留資格への影響も心配。</p>
+                    </div>
+                    <div class="scenario-card">
+                        <div class="scenario-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m-3-1l-3-1m5.25 3.364l-3.418-2.051a.75.75 0 00-.832 0l-3.418 2.051M6.75 9.75h.008v.008H6.75V9.75z" /></svg></div>
+                        <h3>家庭内の問題</h3>
+                        <p>DVや暴力事件。離婚問題。韓国の家族にも相談できない複雑な状況。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="legal-areas" id="areas">
+             <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">取扱分野</h2>
+                    <p class="section-subtitle">刑事事件から民事・家事まで、あらゆる法的問題に対応</p>
+                </div>
+                <div class="area-grid">
+                    <div class="area-card">
+                        <div class="area-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859M12 3v9" /></svg></div>
+                        <h3>刑事事件</h3>
+                        <p>逮捕・勾留・起訴などの刑事手続き全般。暴行、傷害、薬物事件、経済犯罪など。</p>
+                    </div>
+                    <div class="area-card">
+                        <div class="area-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.125-.504 1.125-1.125V14.25m-17.25 4.5v-1.875a3.375 3.375 0 013.375-3.375h9.75a3.375 3.375 0 013.375 3.375v1.875" /></svg></div>
+                        <h3>交通事故・交通違反</h3>
+                        <p>人身事故、物損事故、飲酒運転など。保険会社との交渉、示談交渉、刑事処分対応。</p>
+                    </div>
+                    <div class="area-card">
+                        <div class="area-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m-7.5-2.952a4.5 4.5 0 011.08-2.018A2.25 2.25 0 0113.5 12a2.25 2.25 0 011.91 1.059 4.5 4.5 0 011.08 2.018m-7.5-2.952A2.25 2.25 0 0012 13.5a2.25 2.25 0 00-1.91-1.059 4.5 4.5 0 00-1.08-2.018m-7.5-2.952A4.5 4.5 0 016 7.5a4.5 4.5 0 016.364 0 4.5 4.5 0 016.364 0m-12.728 0A4.5 4.5 0 016 7.5" /></svg></div>
+                        <h3>家事事件</h3>
+                        <p>離婚、親権、養育費、財産分与、DV保護命令など。韓日法律の違いを踏まえたアドバイス。</p>
+                    </div>
+                     <div class="area-card">
+                        <div class="area-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h6m-6 2.25h6M3 12l6 6m6-6l6-6" /></svg></div>
+                        <h3>債務整理・破産</h3>
+                        <p>借金問題、自己破産、個人再生、任意整理など。韓国での債務との関係も含めて解決。</p>
+                    </div>
+                    <div class="area-card">
+                        <div class="area-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.098a2.25 2.25 0 01-2.25 2.25h-13.5a2.25 2.25 0 01-2.25-2.25V6.75a2.25 2.25 0 012.25-2.25h.75m12.75 6l-3.75-3.75m3.75 3.75L16.5 18" /></svg></div>
+                        <h3>労働問題</h3>
+                        <p>不当解雇、残業代請求、パワハラ、労災など。外国人労働者特有の問題にも精通。</p>
+                    </div>
+                    <div class="area-card">
+                        <div class="area-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" /></svg></div>
+                        <h3>在留資格・ビザ</h3>
+                        <p>在留資格の更新、変更、永住権申請など。刑事事件が在留資格に与える影響もご説明。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="lawyer-profiles" id="lawyers">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">弁護士紹介</h2>
+                    <p class="section-subtitle">韓国語に精通した経験豊富な弁護士があなたをサポートします</p>
+                </div>
+                <div class="profile-grid">
+                    <div class="profile-card">
+                        <img src="https://via.placeholder.com/140x140.png?text=Lawyer+1" alt="弁護士A" class="profile-photo">
+                        <h3 class="profile-name">弁護士 田中 太郎</h3>
+                        <p class="profile-title">東京支部代表 / 韓国語対応責任者</p>
+                        <p class="profile-bio">早稲田大学法学部卒業。在日コリアンとしての経験を活かし、言葉や文化の壁に悩む方々の力になりたいと考えています。</p>
+                    </div>
+                    <div class="profile-card">
+                        <img src="https://via.placeholder.com/140x140.png?text=Lawyer+2" alt="弁護士B" class="profile-photo">
+                        <h3 class="profile-name">弁護士 鈴木 一郎</h3>
+                        <p class="profile-title">刑事事件専門</p>
+                        <p class="profile-bio">ソウル大学語学堂への留学経験あり。法律と韓国文化への深い理解を基に、最適な弁護戦略を提案します。</p>
+                    </div>
+                     <div class="profile-card">
+                        <img src="https://via.placeholder.com/140x140.png?text=Lawyer+3" alt="弁護士C" class="profile-photo">
+                        <h3 class="profile-name">弁護士パク・ジナ</h3>
+                        <p class="profile-title">家事事件・国際法務担当</p>
+                        <p class="profile-bio">韓国出身。日本の弁護士資格を取得。両国の法律に精通しており、特に国際離婚・相続問題を得意とします。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="legal-differences-enhanced" id="differences">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">知っておくべき韓日法制度の重要な違い</h2>
+                    <p class="section-subtitle">両国の法律の違いを理解し、適切な対応を</p>
+                </div>
+                <div class="comparison-infographic">
+                    <div class="comparison-item">
+                        <h3>逮捕・勾留期間</h3>
+                        <div class="comparison-visual">
+                            <div class="korea-side"><span class="flag">🇰🇷</span><span class="duration">最大30日</span></div>
+                            <div class="vs">VS</div>
+                            <div class="japan-side"><span class="flag">🇯🇵</span><span class="duration">最大23日</span></div>
+                        </div>
+                        <p class="impact-note">⚠️ 日本の方が短いが、外国人は保釈が困難</p>
+                    </div>
+                    <div class="comparison-item">
+                        <h3>保釈制度</h3>
+                        <div class="comparison-visual">
+                            <div class="korea-side"><span class="flag">🇰🇷</span><span class="impact">保釈許可率 約75%</span></div>
+                            <div class="vs">VS</div>
+                            <div class="japan-side"><span class="flag">🇯🇵</span><span class="impact">保釈許可率 約35%</span></div>
+                        </div>
+                        <p class="impact-note">⚠️ 日本では保釈金も高額で審査も厳格</p>
+                    </div>
+                    <div class="comparison-item">
+                        <h3>前科の影響</h3>
+                        <div class="comparison-visual">
+                            <div class="korea-side"><span class="flag">🇰🇷</span><span class="impact">帰化に影響小</span></div>
+                            <div class="vs">VS</div>
+                            <div class="japan-side"><span class="flag">🇯🇵</span><span class="impact">在留資格に重大影響</span></div>
+                        </div>
+                        <p class="impact-note">⚠️ 日本では強制送還のリスクも</p>
+                    </div>
+                    <div class="comparison-item">
+                        <h3>示談の重要性</h3>
+                        <div class="comparison-visual">
+                            <div class="korea-side"><span class="flag">🇰🇷</span><span class="impact">量刑に一定の影響</span></div>
+                            <div class="vs">VS</div>
+                            <div class="japan-side"><span class="flag">🇯🇵</span><span class="impact">不起訴の可能性大</span></div>
+                        </div>
+                        <p class="impact-note">⚠️ 日本では示談が極めて重要</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="market-stats-section" id="stats">
+            <div class="container">
+                <div class="market-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">42万人</div>
+                        <div class="stat-label">在日韓国人・朝鮮人</div>
+                        <div class="stat-source">令和6年法務省データ</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">1,000件+</div>
+                        <div class="stat-label">韓国語対応実績</div>
+                        <div class="stat-source">当事務所実績</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">24/365</div>
+                        <div class="stat-label">緊急対応体制</div>
+                        <div class="stat-source">年中無休</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">顧客満足度</div>
+                        <div class="stat-source">2024年度調査</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="success-cases" id="cases">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">解決実績</h2>
+                    <p class="section-subtitle">韓国語での丁寧な対応と専門知識で、多くの事件を解決</p>
+                </div>
+                <div class="cases-grid">
+                    <div class="case-card">
+                        <div class="case-type">刑事事件</div>
+                        <div class="case-content">暴行罪で起訴されたK氏の事件。韓国語での詳細な事情聴取により正当防衛の可能性を発見。被害者との示談交渉も成功し、最終的に不起訴処分を獲得。前科を回避し、在留資格への影響もなし。</div>
+                        <div class="case-result">✓ 不起訴処分・在留資格維持</div>
+                    </div>
+                    <div class="case-card">
+                        <div class="case-type">交通事故</div>
+                        <div class="case-content">人身事故を起こしたL氏。被害者との示談交渉、保険会社との交渉を韓国語でサポート。刑事処分は罰金刑で済み、民事でも適正な賠償で解決。運転免許も維持。</div>
+                        <div class="case-result">✓ 罰金刑・示談成立・免許維持</div>
+                    </div>
+                    <div class="case-card">
+                        <div class="case-type">家事事件</div>
+                        <div class="case-content">DVで悩んでいたP氏の離婚事件。保護命令の申立てから離婚調停まで一貫してサポート。親権も獲得し、養育費も適正額で合意。新しい生活をスタート。</div>
+                        <div class="case-result">✓ 親権獲得・養育費確保・保護命令</div>
+                    </div>
+                    <div class="case-card">
+                        <div class="case-type">労働問題</div>
+                        <div class="case-content">不当解雇されたM氏の労働審判。韓国語での詳細な聞き取りで、会社側の違法行為を立証。解雇撤回と未払い残業代300万円を獲得。職場復帰も実現。</div>
+                        <div class="case-result">✓ 解雇撤回・残業代獲得・職場復帰</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="contact-section" id="consultation">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">無料相談申込み</h2>
+                    <p class="section-subtitle">韓国語対応専門弁護士が24時間以内にご連絡いたします</p>
+                </div>
+                <div class="contact-form">
+                    <h3 class="form-title">無料相談申込フォーム</h3>
+                    <p class="form-subtitle">お急ぎの方は今すぐお電話ください：0120-631-881</p>
+                    <form id="consultationForm">
+                        <div class="form-group"><label class="form-label" for="name">お名前 *</label><input class="form-input" type="text" id="name" name="name" required></div>
+                        <div class="form-group"><label class="form-label" for="phone">連絡先電話番号 *</label><input class="form-input" type="tel" id="phone" name="phone" required></div>
+                        <div class="form-group"><label class="form-label" for="email">メールアドレス</label><input class="form-input" type="email" id="email" name="email"></div>
+                        <div class="form-group">
+                            <label class="form-label" for="case-type">相談内容 *</label>
+                            <select class="form-input" id="case-type" name="case-type" required>
+                                <option value="">選択してください</option><option value="criminal">刑事事件</option><option value="traffic">交通事故・交通違反</option><option value="family">離婚・家事事件</option><option value="labor">労働問題</option><option value="debt">債務整理</option><option value="visa">在留資格・ビザ</option><option value="other">その他</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="urgency">緊急度 *</label>
+                            <select class="form-input" id="urgency" name="urgency" required>
+                                <option value="">選択してください</option><option value="emergency">緊急（逮捕・勾留中）</option><option value="urgent">至急（近日中に対応必要）</option><option value="normal">通常（相談・準備段階）</option>
+                            </select>
+                        </div>
+                        <div class="form-group"><label class="form-label" for="details">詳細・ご相談内容</label><textarea class="form-input" id="details" name="details" rows="4" placeholder="現在の状況、ご心配な点などを詳しくお書きください"></textarea></div>
+                        <button type="submit" class="form-submit">無料相談を申し込む</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h4>弁護士法人あいち刑事事件総合法律事務所</h4>
-                    <ul>
-                        <li>東京支部</li>
-                        <li>📍 東京都新宿区西新宿1丁目14-15　タウンウエストビル9階</li>
-                        <li>📞 0120-631-881（24時間対応）</li>
-                        <li>🇰🇷 韓国語専門サポート</li>
-                    </ul>
+                    <ul><li>東京支部</li><li>📍 東京都新宿区西新宿1-14-15</li><li>📞 0120-631-881（24時間対応）</li><li>🇰🇷 韓国語専門サポート</li></ul>
                 </div>
-                
                 <div class="footer-section">
                     <h4>取扱分野</h4>
                     <ul>
-                        <li>刑事事件全般</li>
-                        <li>交通事故・交通違反</li>
-                        <li>離婚・家事事件</li>
-                        <li>労働問題</li>
-                        <li>債務整理・破産</li>
-                        <li>在留資格・ビザ問題</li>
-                        <li>民事訴訟</li>
-                        <li>その他法律相談</li>
+                        <li><a href="#areas">刑事事件全般</a></li>
+                        <li><a href="#areas">交通事故・交通違反</a></li>
+                        <li><a href="#areas">離婚・家事事件</a></li>
+                        <li><a href="#areas">労働問題</a></li>
+                        <li><a href="#areas">債務整理・破産</a></li>
+                        <li><a href="#areas">在留資格・ビザ問題</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-section">
                     <h4>サービス内容</h4>
                     <ul>
@@ -1289,12 +521,9 @@
                         <li>韓国語通訳・翻訳</li>
                         <li>示談交渉代理</li>
                         <li>刑事弁護</li>
-                        <li>民事代理</li>
                         <li>書類作成支援</li>
-                        <li>法律アドバイス</li>
                     </ul>
                 </div>
-                
                 <div class="footer-section">
                     <h4>韓国語サポート</h4>
                     <ul>
@@ -1302,26 +531,15 @@
                         <li>韓日法制度比較説明</li>
                         <li>韓国領事館連絡代行</li>
                         <li>本国家族への説明</li>
-                        <li>韓国語書類翻訳</li>
-                        <li>通訳同行サービス</li>
-                        <li>韓国法律相談</li>
-                        <li>国際事件対応</li>
                     </ul>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 弁護士法人あいち刑事事件総合法律事務所 東京支部. All rights reserved.</p>
-            </div>
+            <div class="footer-bottom"><p>&copy; 2025 弁護士法人あいち刑事事件総合法律事務所 東京支部. All rights reserved.</p></div>
         </div>
     </footer>
 
-    <!-- Mobile Fixed CTA -->
-    <div class="mobile-fixed-cta" style="display: none;">
-        <a href="tel:0120-631-881">
-            <span>📞</span>
-            <span>今すぐ無料相談</span>
-        </a>
+    <div class="mobile-fixed-cta">
+        <a href="tel:0120-631-881"><span>📞</span><span>今すぐ無料相談</span></a>
     </div>
 
     <script>
@@ -1329,65 +547,44 @@
         if (window.innerWidth <= 768) {
             document.querySelector('.mobile-fixed-cta').style.display = 'flex';
         }
-        
+        window.addEventListener('resize', function() {
+            if (window.innerWidth <= 768) {
+                document.querySelector('.mobile-fixed-cta').style.display = 'flex';
+            } else {
+                document.querySelector('.mobile-fixed-cta').style.display = 'none';
+            }
+        });
+
         // Form submission with KPI tracking
         document.getElementById('consultationForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
             const urgency = document.getElementById('urgency').value;
             let responseTime = '24時間以内';
-            let priority = '';
+            if (urgency === 'emergency') responseTime = '最優先で即座に';
+            else if (urgency === 'urgent') responseTime = '12時間以内に';
             
-            switch(urgency) {
-                case 'emergency':
-                    responseTime = '最優先で即座に';
-                    priority = '【緊急対応】';
-                    break;
-                case 'urgent':
-                    responseTime = '12時間以内に';
-                    priority = '【至急対応】';
-                    break;
-                case 'normal':
-                    responseTime = '24時間以内に';
-                    priority = '【通常対応】';
-                    break;
-                default:
-                    responseTime = '48時間以内に';
-                    priority = '【予防相談】';
-            }
-            
-            // KPI Tracking (if GA4 is installed)
             if (typeof gtag !== 'undefined') {
-                gtag('event', 'form_submit', {
-                    'event_category': 'lead',
-                    'event_label': 'consultation_form_korean',
-                    'urgency_level': urgency
-                });
+                gtag('event', 'form_submit', { 'event_category': 'lead', 'urgency_level': urgency });
             }
             
-            alert(`${priority}無料相談の申込みを受付いたしました。\n\n${responseTime}韓国語対応専門弁護士からご連絡いたします。\n\n緊急時は今すぐお電話ください：\n📞 0120-631-881（24時間対応）`);
+            alert(`無料相談の申込みを受付いたしました。\n\n${responseTime}、韓国語対応専門弁護士からご連絡いたします。\n\n緊急時は今すぐお電話ください：\n📞 0120-631-881`);
+            this.reset();
         });
 
         // Phone click tracking
         document.querySelectorAll('a[href^="tel:"]').forEach(link => {
             link.addEventListener('click', function() {
                 if (typeof gtag !== 'undefined') {
-                    gtag('event', 'click', {
-                        'event_category': 'engagement',
-                        'event_label': 'phone_click_korean_lp'
-                    });
+                    gtag('event', 'click', { 'event_category': 'engagement', 'event_label': 'phone_click' });
                 }
             });
         });
-
+        
         // Language toggle
         document.querySelectorAll('.lang-option').forEach(btn => {
             btn.addEventListener('click', function() {
-                document.querySelectorAll('.lang-option').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                
-                if (this.textContent === '한국어') {
-                    alert('한국어 버전을 준비중입니다.\n韓国語版を準備中です。\n\n상담을 원하시면:\nご相談をご希望の場合：\n📞 0120-631-881');
+                if(this.textContent === '한국어') {
+                    alert('한국어 버전을 준비중입니다.\nご相談は 📞 0120-631-881 へ');
                 }
             });
         });
@@ -1396,28 +593,17 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const headerOffset = 100;
-                    const elementPosition = target.getBoundingClientRect().top;
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const header = document.querySelector('.header');
+                    const headerOffset = header ? header.offsetHeight + 20 : 120;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
                     
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
+                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
                 }
             });
-        });
-
-        // Urgency level tracking
-        document.getElementById('urgency').addEventListener('change', function() {
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'urgency_select', {
-                    'event_category': 'engagement',
-                    'event_label': this.value
-                });
-            }
         });
     </script>
 </body>
