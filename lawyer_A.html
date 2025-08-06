@@ -50,7 +50,7 @@
         .feature-icon svg { width: 18px; height: 18px; }
         .feature-icon-text { font-size: 1.2rem; font-weight: 700; }
         .hero-cta { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-        .cta-primary { background: var(--amber-500); color: var(--slate-900); padding: 18px 36px; border-radius: 50px; text-decoration: none; font-size: 1.1rem; font-weight: 600; transition: all 0.3s ease; box-shadow: var(--shadow-lg); }
+        .cta-primary { background: var(--amber-500); color: var(--slate-900); padding: 18px 36px; border-radius: 50px; text-decoration: none; font-size: 1.1rem; font-weight: 600; transition: all 0.3s ease; box-shadow: var(--shadow-lg);animation: cta-glow 2.5s infinite ease-in-out; /* 글로우 애니메이션 적용 */}
         .cta-primary:hover { background: var(--amber-400); transform: translateY(-2px); }
         .cta-secondary { background: transparent; color: var(--white); padding: 18px 36px; border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 50px; text-decoration: none; font-size: 1.1rem; font-weight: 500; transition: all 0.3s ease; }
         .cta-secondary:hover { background: rgba(255, 255, 255, 0.1); }
@@ -170,6 +170,43 @@
             .emergency-scenarios .scenario-card.urgent { animation: pulse 2s infinite; }
         }
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.02); } 100% { transform: scale(1); } }
+        .hero::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(220, 38, 38, 0.15) 0%, transparent 70%); /* 눈에 거슬리지 않는 옅은 붉은색 */
+    transform: translate(-50%, -50%);
+    animation: emergency-pulse 3s infinite ease-in-out; /* 3초 동안 부드럽게 반복 */
+    z-index: 0;
+}
+/* --- ▼ [추가] 긴급 신호 애니메이션 키프레임 ▼ --- */
+@keyframes emergency-pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0.5;
+    }
+}
+/* --- ▲ [추가] --- */
+
+.hero-content {
+    position: relative;
+    z-index: 1; /* ::after 요소보다 위에 위치하도록 z-index 조정 */
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+    
     </style>
 </head>
 <body>
