@@ -364,38 +364,46 @@
   color: var(--accent-nitou);
 }
 
-/* ========== PDF 출력을 위한 인쇄용 스타일 ========== */
+/* 인쇄 전용 스타일 */
 @media print {
-    body { background: none !important; }
-    .slide {
-        width: 100% !important;
-        height: 100% !important;
-        border: 1px solid #ccc !important;
-        margin: 0 !important;
-        padding: 15mm !important;
-        box-shadow: none !important;
-        box-sizing: border-box !important;
-        page-break-after: always !important; /* 핵심 속성 */
-    }
+  @page {
+    size: A4 landscape;
+    margin: 0;
+  }
 
-    @page {
-        size: A4 landscape;
-        margin: 0;
-    }
+  body {
+    display: block !important;
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: none !important;
+  }
 
-    .slide-wrapper {
-        display: block !important;
-    }
+  /* 슬라이드마다 무조건 페이지 분리 */
+  .slide-wrapper {
+    display: block !important;           /* flex → block 전환 */
+    page-break-after: always !important;  /* 구버전 브라우저용 */
+    break-after: page !important;         /* CSS3 */
+    page-break-inside: avoid !important;
+    break-inside: avoid-page !important;
+  }
+  /* 마지막 슬라이드는 강제 분리 해제 */
+  .slide-wrapper:last-child {
+    page-break-after: auto !important;
+  }
 
-    .slide:last-child {
-        page-break-after: avoid !important;
-    }
+  /* A4 가로에 꽉 차도록 슬라이드 크기 조정 */
+  .slide {
+    width: 297mm !important;
+    height: 210mm !important;
+    padding: 15mm !important;
+    box-sizing: border-box !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
 
-    script {
-        display: none !important;
-    }
-}
-</style>
+    </style>
 </head>
 <body>
 
@@ -431,7 +439,7 @@
     </div>
 
     <!-- スライド02: 目次 -->
-    <div class="slide-wrapper">
+    <div class="slide-wrapper active">
         <div class="slide">
             <header class="slide-top-header">
                 <div class="client-info">弁護士法人あいち刑事事件総合法律事務所東京支部 御中<br>在日韓国人向け法律相談LP制作企画案</div>
@@ -480,7 +488,7 @@
     </div>
 
     <!-- スライド03: プロジェクト戦略概要 -->
-    <div class="slide-wrapper">
+    <div class="slide-wrapper active">
         <div class="slide">
             <header class="slide-top-header">
                 <div class="client-info">弁護士法人あいち刑事事件総合法律事務所東京支部 御中<br>在日韓国人向け法律相談LP制作企画案</div>
@@ -528,7 +536,7 @@
     </div>
 
     <!-- スライド04: 3分要約 -->
-    <div class="slide-wrapper">
+    <div class="slide-wrapper active">
         <div class="slide">
             <header class="slide-top-header">
                 <div class="client-info">弁護士法人あいち刑事事件総合法律事務所東京支部 御中<br>在日韓国人向け法律相談LP制作企画案</div>
@@ -573,7 +581,7 @@
     </div>
 
     <!-- スライド05: 市場機会と課題分析 -->
-    <div class="slide-wrapper">
+    <div class="slide-wrapper active">
         <div class="slide">
             <header class="slide-top-header">
                 <div class="client-info">弁護士法人あいち刑事事件総合法律事務所東京支部 御中<br>在日韓国人向け法律相談LP制作企画案</div>
@@ -616,7 +624,7 @@
     </div>
 
     <!-- スライド06: 提案コンセプト比較 -->
-    <div class="slide-wrapper">
+    <div class="slide-wrapper active">
         <div class="slide">
             <header class="slide-top-header">
                 <div class="client-info">弁護士法人あいち刑事事件総合法律事務所東京支部 御中<br>在日韓国人向け法律相談LP制作企画案</div>
@@ -671,7 +679,7 @@
     </div>
 
     <!-- スライド07: サイト構造とプラン対応 -->
-    <div class="slide-wrapper">
+    <div class="slide-wrapper active">
         <div class="slide">
             <header class="slide-top-header">
                 <div class="client-info">弁護士法人あいち刑事事件総合法律事務所東京支部 御中<br>在日韓国人向け法律相談LP制作企画案</div>
@@ -718,83 +726,95 @@
     </div>
 
     <!-- スライド08: プラン比較一覧 -->
-    <div class="slide-wrapper">
-        <div class="slide">
-            <header class="slide-top-header">
-                <div class="client-info">弁護士法人あいち刑事事件総合法律事務所東京支部 御中<br>在日韓国人向け法律相談LP制作企画案</div>
-            </header>
-      <main class="slide-main-content">
-        <div class="slide-header">
-          <h1>プラン比較一覧</h1>
-        </div>
-        <div class="slide-content">
-          <table class="data-table compact-table fixed-layout">
-            <colgroup>
-              <col style="width:18%">
-              <col style="width:20%">
-              <col style="width:20%">
-              <col style="width:20%">
-              <col style="width:22%">
-            </colgroup>
-            <thead>
-              <tr>
-                <th>項目</th>
-                <th style="background-color:#fff0f6; color:#b83280;">梅 BASIC</th>
-                <th style="background-color:#eef2ff; color:var(--accent-blue);">竹 STANDARD</th>
-                <th style="background-color:#fffde7; color:#ca8a04;">松 PREMIUM</th>
-                <th style="background-color:var(--bg-nitou); color:var(--accent-nitou);">二刀流 PLAN</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th>費用(税別)</th>
-                <td><strong>120万円</strong></td>
-                <td><strong>200万円</strong></td>
-                <td><strong>350万円</strong></td>
-                <td><strong>430万円</strong></td>
-              </tr>
-              <tr>
-                <th>制作範囲</th>
-                <td>LP 1ページ</td>
-                <td>LP ＋ サブ3ページ</td>
-                <td>LP ＋ サブ6ページ</td>
-                <td>ミニLP ＋ 総合LP（松相当）</td>
-              </tr>
-              <tr>
-                <th>修正ラウンド</th>
-                <td>最大2回</td>
-                <td>最大3回</td>
-                <td>無制限（軽微）</td>
-                <td>最大3回</td>
-              </tr>
-              <tr>
-                <th>運用・保守（M1〜M3）</th>
-                <td>オプション</td>
-                <td>オプション</td>
-                <td><span class="highlight-text">3ヶ月分含む</span></td>
-                <td>オプション</td>
-              </tr>
-              <tr>
-                <th>スチール写真</th>
-                <td>オプション</td>
-                <td>オプション</td>
-                <td><span class="highlight-text">含む</span></td>
-                <td>オプション</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </main>
-      <footer class="slide-footer">
-        <div class="presenter"></div>
-        <div class="page-number">08</div>
-      </footer>
-    </div>
+<div class="slide-wrapper active">
+  <div class="slide">
+    <header class="slide-top-header">
+      <div class="client-info">
+        弁護士法人あいち刑事事件総合法律事務所東京支部 御中<br>
+        在日韓国人向け法律相談LP制作企画案
+      </div>
+    </header>
+    <main class="slide-main-content">
+      <div class="slide-header">
+        <h1>プラン比較一覧</h1>
+      </div>
+      <div class="slide-content">
+        <table class="data-table compact-table fixed-layout">
+          <colgroup>
+            <col style="width:18%">
+            <col style="width:20%">
+            <col style="width:20%">
+            <col style="width:20%">
+            <col style="width:22%">
+          </colgroup>
+          <thead>
+            <tr>
+              <th>項目</th>
+              <th style="background-color:#fff0f6; color:#b83280;">梅 BASIC</th>
+              <th style="background-color:#eef2ff; color:var(--accent-blue);">竹 STANDARD</th>
+              <th style="background-color:#fffde7; color:#ca8a04;">松 PREMIUM</th>
+              <th style="background-color:#fffde7; color:#4a4231;">二刀流 PLAN</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>費用(税別)</th>
+              <td><strong>120万円</strong></td>
+              <td><strong>200万円</strong></td>
+              <td><strong>370万円</strong></td>
+              <td><strong>450万円</strong></td>
+            </tr>
+            <tr>
+              <th>制作範囲</th>
+              <td>LP 1ページ</td>
+              <td>LP ＋ サブ3ページ</td>
+              <td>LP ＋ サブ6ページ</td>
+              <td>ミニLP ＋ 総合LP（🌲松プラン相当）</td>
+            </tr>
+            <!-- ここから新規行 -->
+            <tr>
+              <th>WordPressサイト構築・設定含む</th>
+              <td></td>
+              <td></td>
+              <td><span class="highlight-text">含む</span></td>
+              <td><span class="highlight-text">含む</span></td>
+            </tr>
+            <!-- ここまで -->
+            <tr>
+              <th>修正ラウンド</th>
+              <td>最大2回</td>
+              <td>最大3回</td>
+              <td>無制限（軽微）</td>
+              <td>無制限（軽微）</td>
+            </tr>
+            <tr>
+              <th>運用・保守（M1〜M3）</th>
+              <td>オプション</td>
+              <td>オプション</td>
+              <td><span class="highlight-text">3ヶ月分含む</span></td>
+              <td><span class="highlight-text">3ヶ月分含む</span></td>
+            </tr>
+            <tr>
+              <th>スチール写真</th>
+              <td>オプション</td>
+              <td>オプション</td>
+              <td><span class="highlight-text">含む</span></td>
+              <<td><span class="highlight-text">含む</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+    <footer class="slide-footer">
+      <div class="presenter"></div>
+      <div class="page-number">08</div>
+    </footer>
   </div>
-  
+</div>
+
 
     <!-- スライド09: 梅プラン詳細 -->
-    <div class="slide-wrapper">
+    <div class="slide-wrapper active">
         <div class="slide">
             <header class="slide-top-header">
                 <div class="client-info">弁護士法人あいち刑事事件総合法律事務所東京支部 御中<br>在日韓国人向け法律相談LP制作企画案</div>
@@ -836,7 +856,7 @@
     </div>
 
     <!-- スライド10: 竹プラン詳細 -->
-    <div class="slide-wrapper">
+    <div class="slide-wrapper active">
         <div class="slide">
             <header class="slide-top-header">
                 <div class="client-info">弁護士法人あいち刑事事件総合法律事務所東京支部 御中<br>在日韓国人向け法律相談LP制作企画案</div>
@@ -881,7 +901,7 @@
     </div>
 
     <!-- スライド11: 松プラン詳細 -->
-<div class="slide-wrapper">
+    <div class="slide-wrapper active">
     <div class="slide">
       <header class="slide-top-header">
         <div class="client-info">
@@ -891,7 +911,7 @@
       </header>
       <main class="slide-main-content">
         <div class="slide-header">
-          <h1>🌲 松プラン (Premium) 詳細 - 350万円 (税別)</h1>
+          <h1>🌲 松プラン (Premium) 詳細 - 370万円 (税別)</h1>
         </div>
   
         <div class="plan-detail-grid">
@@ -958,7 +978,7 @@
   </div>
   
     <!-- スライド12: 緊急＋総合LP 二刀流プラン（拡張版） -->
-<div class="slide-wrapper">
+    <div class="slide-wrapper active">
     <div class="slide">
         <header class="slide-top-header">
             <div class="client-info">
@@ -999,7 +1019,7 @@
               <ul>
                 <li>スケジュール：A→1ヶ月／B→約2ヶ月</li>
                 <li>KPI：A→PV→CTR→電話クリック率、B→滞在時間・フォーム送信率</li>
-                <li>合計予算：約430万円（税別）</li>
+                <li>合計予算：約450万円（税別）</li>
               </ul>
             </div>
             
@@ -1036,7 +1056,7 @@
         </div>
   
     <!-- スライド13: 追加オプション（プロモーション） -->
-    <div class="slide-wrapper">
+    <div class="slide-wrapper active">
         <div class="slide">
             <header class="slide-top-header">
                 <div class="client-info">弁護士法人あいち刑事事件総合法律事務所東京支部 御中<br>在日韓国人向け法律相談LP制作企画案</div>
@@ -1092,7 +1112,7 @@
     </div>
 
     <!-- スライド14: 追加オプション（コンテンツ/運用） -->
-    <div class="slide-wrapper">
+    <div class="slide-wrapper active">
         <div class="slide">
             <header class="slide-top-header">
                 <div class="client-info">弁護士法人あいち刑事事件総合法律事務所東京支部 御中<br>在日韓国人向け法律相談LP制作企画案</div>
@@ -1154,7 +1174,7 @@
     </div>
 
     <!-- スライド15: 当社独自の提供価値 -->
-    <div class="slide-wrapper">
+    <div class="slide-wrapper active">
         <div class="slide">
             <header class="slide-top-header">
                 <div class="client-info">弁護士法人あいち刑事事件総合法律事務所東京支部 御中<br>在日韓国人向け法律相談LP制作企画案</div>
@@ -1190,7 +1210,7 @@
     </div>
 
     <!-- スライド16: B2B/パートナーシップ戦略 -->
-    <div class="slide-wrapper">
+    <div class="slide-wrapper active">
         <div class="slide">
             <header class="slide-top-header">
                 <div class="client-info">弁護士法人あいち刑事事件総合法律事務所東京支部 御中<br>在日韓国人向け法律相談LP制作企画案</div>
@@ -1227,7 +1247,7 @@
     </div>
 
     <!-- スライド17: 契約・運用条件 -->
-    <div class="slide-wrapper">
+    <div class="slide-wrapper active">
         <div class="slide">
             <header class="slide-top-header">
                 <div class="client-info">弁護士法人あいち刑事事件総合法律事務所東京支部 御中<br>在日韓国人向け法律相談LP制作企画案</div>
@@ -1275,7 +1295,7 @@
     </div>
 
     <!-- スライド18: 結論 -->
-    <div class="slide-wrapper">
+    <div class="slide-wrapper active">
         <div class="slide">
             <header class="slide-top-header">
                 <div class="client-info">弁護士法人あいち刑事事件総合法律事務所東京支部 御中<br>在日韓国人向け法律相談LP制作企画案</div>
@@ -1303,23 +1323,23 @@
     <script>
         const slides = document.querySelectorAll('.slide-wrapper');
         let currentSlide = 0;
-
+    
         function showSlide(n) {
             slides.forEach((slide, index) => {
                 slide.classList.toggle('active', index === n);
             });
         }
-
+    
         function nextSlide() {
             currentSlide = (currentSlide + 1) % slides.length;
             showSlide(currentSlide);
         }
-
+    
         function prevSlide() {
             currentSlide = (currentSlide - 1 + slides.length) % slides.length;
             showSlide(currentSlide);
         }
-
+    
         document.addEventListener('keydown', (event) => {
             if (event.key === 'ArrowRight' || event.key === ' ') {
                 nextSlide();
@@ -1327,37 +1347,43 @@
                 prevSlide();
             }
         });
-
+    
         document.body.addEventListener('click', (event) => {
             if (event.target.closest('a, button, details')) return;
             const rect = document.body.getBoundingClientRect();
             const clickX = event.clientX - rect.left;
             const midPoint = rect.width / 2;
-            
+    
             if (clickX > midPoint) {
                 nextSlide();
             } else {
                 prevSlide();
             }
         });
-
+    
         showSlide(currentSlide);
-     
-  // 첫 슬라이드에서 presenter 블록을 복제해서
-  const credit = document
-    .querySelector('.slide-wrapper:first-of-type .slide-footer .presenter')
-    .cloneNode(true);
-
-  // 모든 slide-footer마다 빈 presenter 대신 붙여넣기
-  document.querySelectorAll('.slide-footer').forEach(footer => {
-    const existing = footer.querySelector('.presenter');
-    if (existing && existing.innerHTML.trim() === '') {
-      existing.replaceWith(credit.cloneNode(true));
-    }
-  });
-
-
+    
+        // 첫 슬라이드 presenter 정보를 모든 슬라이드에 복사
+        const credit = document
+          .querySelector('.slide-wrapper:first-of-type .slide-footer .presenter')
+          ?.cloneNode(true);
+    
+        if (credit) {
+          document.querySelectorAll('.slide-footer').forEach(footer => {
+            const existing = footer.querySelector('.presenter');
+            if (existing && existing.innerHTML.trim() === '') {
+              existing.replaceWith(credit.cloneNode(true));
+            }
+          });
+        }
+    
+        // 인쇄 전에 모든 슬라이드 표시
+        window.addEventListener('beforeprint', () => {
+          document.querySelectorAll('.slide-wrapper').forEach(el => {
+            el.style.display = 'block';
+          });
+        });
     </script>
-
-</body>
-</html>
+    
+    </body>
+    </html>
