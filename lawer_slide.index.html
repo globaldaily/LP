@@ -34,6 +34,8 @@
             --gradient-subtle: linear-gradient(135deg, var(--bg-color) 0%, var(--bg-subtle) 100%);
             --font-heading: 'Noto Serif JP', serif;
             --font-body: 'Noto Sans JP', sans-serif;
+            --accent-nitou: #4f46e5;   /* 니刀流プラン 전용 보라 계열 */
+            --bg-nitou: rgba(79, 70, 229, 0.08); /* 연한 배경 톤 */
         }
 
         html { scroll-behavior: smooth; }
@@ -137,38 +139,263 @@
         .text-content li { break-inside: avoid; margin-bottom: 12px; font-size: 0.85rem; line-height: 1.6; }
         .text-content li strong { color: var(--primary-dark); }
 
-        @media print {
-            @page {
-                size: landscape;
-                margin: 0.5in;
-            }
-            body { 
-                background: white; 
-                margin: 0;
-                padding: 0;
-                width: 100vw;
-                height: 100vh;
-            }
-            .slide { 
-                box-shadow: none; 
-                border: 1px solid #ccc; 
-                page-break-after: always; 
-                width: 100%; 
-                height: 100vh; 
-                max-width: none;
-                margin: 0;
-                padding: 15mm;
-                display: flex;
-                flex-direction: column;
-            }
-            .slide-wrapper { 
-                display: block !important; 
-            }
-            .slide:last-child {
-                page-break-after: avoid;
-            }
-        }
-    </style>
+    
+        /* 既存の<style>内に追記してください */
+.plan-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.plan-detail-card {
+  background: var(--bg-color);
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+}
+
+.plan-detail-notes {
+  background: var(--bg-subtle);
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+}
+
+.plan-detail-notes h4 {
+  margin-top: 0;
+  font-size: 0.95rem;
+  color: var(--accent-orange);
+  border-left: 4px solid var(--accent-orange);
+  padding-left: 8px;
+  font-weight: 600;
+}
+
+.plan-detail-notes ul {
+  list-style: none;
+  padding-left: 16px;
+  margin: 10px 0 0 0;
+}
+
+.plan-detail-notes li::before {
+  content: "⚠️";
+  margin-right: 6px;
+}
+/* 既存の<style>内に追記 */
+    .plan-detail-notes {
+  background: var(--bg-subtle);
+  border: 1px solid var(--accent-orange);
+  padding: 15px 20px;
+  border-radius: 6px;
+}
+
+.plan-detail-notes h4 {
+  margin-top: 0;
+  font-size: 1rem;
+  color: var(--accent-orange);
+  border-left: 4px solid var(--accent-orange);
+  padding-left: 8px;
+  font-weight: 600;
+}
+
+.plan-detail-notes ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 10px 0 0 0;
+}
+
+.plan-detail-notes li {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 24px;
+}
+
+.plan-detail-notes li::before {
+  content: "⚙️";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* 注意事項アイテムのみ別アイコンに */
+.plan-detail-notes li:nth-child(n+6)::before {
+  content: "⚠️";
+}
+/* 行間・余白を詰める */
+.slide-content h3,
+.slide-content h4 {
+  margin-top: 12px;
+  margin-bottom: 6px;
+}
+
+.slide-content ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.slide-content ul li {
+  margin-bottom: 6px;
+  line-height: 1.4; /* 少しきつめに */
+}
+
+/* grid-item 内も同様に */
+.creative-grid-2 .grid-item ul li {
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+/* 必要ならタイトル間も詰める */
+.slide-header h1 {
+  margin-bottom: 8px;
+}
+.slide-header h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+/* 全体のベース行間＆余白を極限まで詰める */
+.slide-main-content,
+.slide-content,
+.grid-item,
+.plan-detail-card,
+.plan-detail-notes {
+  line-height: 1.2 !important;
+}
+
+/* 見出しの上下余白をさらに小さく */
+.slide-header h1,
+.slide-header h2,
+.grid-item h3,
+.plan-detail-card h4,
+.plan-detail-notes h4 {
+  margin-top: 4px !important;
+  margin-bottom: 4px !important;
+  line-height: 1.1 !important;
+}
+
+/* リストの余白を最小化 */
+.slide-content ul,
+.grid-item ul,
+.plan-detail-card ul,
+.plan-detail-notes ul {
+  margin: 0 !important;
+  padding-left: 16px !important;
+}
+
+.slide-content ul li,
+.grid-item ul li,
+.plan-detail-card li,
+.plan-detail-notes li {
+  margin-bottom: 4px !important;
+  line-height: 1.2 !important;
+}
+
+/* 表語や段落も詰める */
+.slide-content p,
+.grid-item p,
+.plan-detail-notes small,
+.plan-detail-card small {
+  margin-bottom: 4px !important;
+  line-height: 1.2 !important;
+}
+
+/* カラム間のギャップを小さく */
+.plan-detail-grid {
+  gap: 16px !important;
+}
+
+/* 追加 or 上書き */
+.creative-grid-2 {
+  /* height: 100%; 削除 or コメントアウト */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px !important; /* 先ほどの詰め用ギャップ指定はそのまま */
+}
+.slide {
+  width:1280px;
+  /* height:720px を削除 */
+  min-height:720px;   /* 最低限 720px を確保 */
+  height:auto;        /* 中身に合わせて伸縮 */
+}
+/* ニ刀流プラン용 structure-item */
+.structure-item.nitou {
+  background: var(--bg-nitou);
+  border-left: 4px solid var(--accent-nitou);
+}
+
+.structure-item.nitou .structure-label {
+  color: var(--accent-nitou);
+}
+
+.structure-item.nitou .structure-box {
+  /* 필요 시 박스 테두리나 그림자 색도 맞추려면 여기에 */
+}
+
+.structure-item.nitou .structure-desc {
+  color: var(--accent-nitou);
+}
+
+/* 호버했을 때 약간 강조를 원하면 추가 */
+.structure-item.nitou:hover {
+  background: rgba(79, 70, 229, 0.12);
+}
+/* テーブル幅を固定レイアウトにして列幅を厳密に制御 */
+.fixed-layout {
+  table-layout: fixed;
+  font-size: 0.75rem;    /* 全体の文字を少し小さく */
+}
+.fixed-layout th,
+.fixed-layout td {
+  padding: 4px 6px;      /* パディングを詰める */
+  word-wrap: break-word; /* 長い文字列は折り返す */
+}
+
+/* 二刀流プラン列の強調色 */
+:root {
+  --accent-nitou: #4f46e5;
+  --bg-nitou:   rgba(79, 70, 229, 0.08);
+}
+.fixed-layout th:nth-child(5),
+.fixed-layout td:nth-child(5) {
+  background: var(--bg-nitou);
+  color: var(--accent-nitou);
+}
+
+/* ========== PDF 출력을 위한 인쇄용 스타일 ========== */
+@media print {
+    body { background: none !important; }
+    .slide {
+        width: 100% !important;
+        height: 100% !important;
+        border: 1px solid #ccc !important;
+        margin: 0 !important;
+        padding: 15mm !important;
+        box-shadow: none !important;
+        box-sizing: border-box !important;
+        page-break-after: always !important; /* 핵심 속성 */
+    }
+
+    @page {
+        size: A4 landscape;
+        margin: 0;
+    }
+
+    .slide-wrapper {
+        display: block !important;
+    }
+
+    .slide:last-child {
+        page-break-after: avoid !important;
+    }
+
+    script {
+        display: none !important;
+    }
+}
+</style>
 </head>
 <body>
 
@@ -177,6 +404,7 @@
         <div class="slide">
             <header class="slide-top-header">
                 <div class="client-info">弁護士法人あいち刑事事件総合法律事務所東京支部 御中<br>在日韓国人向け法律相談LP制作企画案</div>
+                
             </header>
             <main class="slide-main-content">
                 <div class="slide-content title-slide">
@@ -221,13 +449,13 @@
                             <div class="index-item" style="padding: 3px 5px; margin-bottom: 2px;"><div class="index-number">05</div><div class="index-title" style="font-size: 0.8rem;">市場機会と課題分析</div></div>
                             <div class="index-item" style="padding: 3px 5px; margin-bottom: 2px;"><div class="index-number">06</div><div class="index-title" style="font-size: 0.8rem;">提案コンセプト比較（A案/B案）</div></div>
                             <div class="index-item" style="padding: 3px 5px; margin-bottom: 2px;"><div class="index-number">07</div><div class="index-title" style="font-size: 0.8rem;">サイト構造とプラン対応</div></div>
-                            <div class="index-item" style="padding: 3px 5px; margin-bottom: 2px;"><div class="index-number">15</div><div class="index-title" style="font-size: 0.8rem;">LP活用・展開戦略（参考）</div></div>
                         </div>
                         <div class="index-section" style="flex: 0 0 auto; padding: 12px;">
                             <h3 style="font-size: 0.9rem; margin-bottom: 8px;">価値・完成</h3>
-                            <div class="index-item" style="padding: 3px 5px; margin-bottom: 2px;"><div class="index-number">14</div><div class="index-title" style="font-size: 0.8rem;">当社独自の提供価値</div></div>
-                            <div class="index-item" style="padding: 3px 5px; margin-bottom: 2px;"><div class="index-number">16</div><div class="index-title" style="font-size: 0.8rem;">契約・運用条件（重要事項）</div></div>
-                            <div class="index-item" style="padding: 3px 5px; margin-bottom: 2px;"><div class="index-number">17</div><div class="index-title" style="font-size: 0.8rem;">ご提案の結論</div></div>
+                            <div class="index-item" style="padding: 3px 5px; margin-bottom: 2px;"><div class="index-number">15</div><div class="index-title" style="font-size: 0.8rem;">当社独自の提供価値</div></div>
+                            <div class="index-item" style="padding: 3px 5px; margin-bottom: 2px;"><div class="index-number">16</div><div class="index-title" style="font-size: 0.8rem;">LP活用・展開戦略（参考）</div></div>
+                            <div class="index-item" style="padding: 3px 5px; margin-bottom: 2px;"><div class="index-number">17</div><div class="index-title" style="font-size: 0.8rem;">契約・運用条件（重要事項）</div></div>
+                            <div class="index-item" style="padding: 3px 5px; margin-bottom: 2px;"><div class="index-number">18</div><div class="index-title" style="font-size: 0.8rem;">ご提案の結論</div></div>
                         </div>
                     </div>
                     <div>
@@ -237,8 +465,9 @@
                             <div class="index-item" style="padding: 3px 5px; margin-bottom: 2px;"><div class="index-number">09</div><div class="index-title" style="font-size: 0.8rem;">梅プラン（Basic）詳細</div></div>
                             <div class="index-item" style="padding: 3px 5px; margin-bottom: 2px;"><div class="index-number">10</div><div class="index-title" style="font-size: 0.8rem;">竹プラン（Standard）詳細</div></div>
                             <div class="index-item" style="padding: 3px 5px; margin-bottom: 2px;"><div class="index-number">11</div><div class="index-title" style="font-size: 0.8rem;">松プラン（Premium）詳細</div></div>
-                            <div class="index-item" style="padding: 3px 5px; margin-bottom: 2px;"><div class="index-number">12</div><div class="index-title" style="font-size: 0.8rem;">追加オプション（プロモーション）</div></div>
-                            <div class="index-item" style="padding: 3px 5px; margin-bottom: 2px;"><div class="index-number">13</div><div class="index-title" style="font-size: 0.8rem;">追加オプション（コンテンツ/運用）</div></div>
+                            <div class="index-item" style="padding: 3px 5px; margin-bottom: 2px;"><div class="index-number">12</div><div class="index-title" style="font-size: 0.8rem;">緊急＋総合LP 二刀流プラン（拡張版)</div></div>
+                            <div class="index-item" style="padding: 3px 5px; margin-bottom: 2px;"><div class="index-number">13</div><div class="index-title" style="font-size: 0.8rem;">追加オプション（プロモーション）</div></div>
+                            <div class="index-item" style="padding: 3px 5px; margin-bottom: 2px;"><div class="index-number">14</div><div class="index-title" style="font-size: 0.8rem;">追加オプション（コンテンツ/運用）</div></div>
                         </div>
                     </div>
                 </div>
@@ -472,6 +701,13 @@
                         <div class="structure-box">サブページ x 6</div>
                         <div class="structure-desc">(竹プランの内容 + 事務所紹介, 成功事例 etc.)</div>
                     </div>
+                    <div class="structure-item nitou">
+                        <div class="structure-label nitou">二刀流プラン</div>
+                        <div class="structure-box">緊急性特化ミニLP</div>
+                        <div class="structure-plus">＋</div>
+                        <div class="structure-box">総合LP（松プラン相当）</div>
+                        <div class="structure-desc">即時対応層と検討層を同時にカバー</div>
+                      </div>                      
                 </div>
             </main>
             <footer class="slide-footer">
@@ -487,45 +723,75 @@
             <header class="slide-top-header">
                 <div class="client-info">弁護士法人あいち刑事事件総合法律事務所東京支部 御中<br>在日韓国人向け法律相談LP制作企画案</div>
             </header>
-            <main class="slide-main-content">
-                <div class="slide-header">
-                    <h1>プラン比較一覧</h1>
-                </div>
-                <div class="slide-content">
-                    <table class="data-table compact-table">
-                        <thead>
-                            <tr>
-                                <th style="width:20%;">項目</th>
-                                <th style="background-color: #fff0f6; color:#b83280;">梅 BASIC</th>
-                                <th style="background-color: #eef2ff; color:var(--accent-blue);">竹 STANDARD (推奨)</th>
-                                <th style="background-color: #fffde7; color:#ca8a04;">松 PREMIUM</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><th>費用(税別)</th><td><strong>120万円</strong></td><td><strong>200万円</strong></td><td><strong>350万円</strong></td></tr>
-                            <tr><th>制作範囲</th><td>LP 1ページ</td><td>LP + サブ3ページ</td><td>LP + サブ6ページ</td></tr>
-                            <tr><th>修正ラウンド</th><td>最大2回</td><td>最大3回</td><td>軽微修正 無制限</td></tr>
-                            <tr><th>運用・保守（M1〜M3）</th><td>オプション</td><td>オプション</td><td><span class="highlight-text">公開後3ヶ月分 含む</span></td></tr>
-                            <tr><th>スチール写真インタビュー</th><td>オプション</td><td>オプション</td><td><span class="highlight-text">含む</span></td></tr>
-                            <tr><th>プロモーション（S1〜S3）</th><td colspan="3" style="text-align:center;">全プラン共通でオプション</td></tr>
-                        </tbody>
-                    </table>
-                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 12px; margin-top: 15px; font-size: 0.75rem; line-height: 1.5;">
-                        <p style="margin: 0 0 8px 0; font-weight: 600; color: var(--primary-dark);">※ 料金に関する重要事項</p>
-                        <ul style="margin: 0; padding-left: 20px;">
-                            <li><strong>韓国語翻訳：</strong>基本コンテンツ構成の韓国語翻訳は料金に含まれております。</li>
-                            <li><strong>法律用語監修：</strong>法律専門用語および表現の最終確認・監修は貴事務所にてお願いいたします。</li>
-                            <li><strong>料金変動：</strong>貴事務所のご希望コンテンツ構成により金額が変動する場合がございます。</li>
-                        </ul>
-                    </div>
-                </div>
-            </main>
-            <footer class="slide-footer">
-                <div class="presenter"></div>
-                <div class="page-number">08</div>
-            </footer>
+      <main class="slide-main-content">
+        <div class="slide-header">
+          <h1>プラン比較一覧</h1>
         </div>
+        <div class="slide-content">
+          <table class="data-table compact-table fixed-layout">
+            <colgroup>
+              <col style="width:18%">
+              <col style="width:20%">
+              <col style="width:20%">
+              <col style="width:20%">
+              <col style="width:22%">
+            </colgroup>
+            <thead>
+              <tr>
+                <th>項目</th>
+                <th style="background-color:#fff0f6; color:#b83280;">梅 BASIC</th>
+                <th style="background-color:#eef2ff; color:var(--accent-blue);">竹 STANDARD</th>
+                <th style="background-color:#fffde7; color:#ca8a04;">松 PREMIUM</th>
+                <th style="background-color:var(--bg-nitou); color:var(--accent-nitou);">二刀流 PLAN</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>費用(税別)</th>
+                <td><strong>120万円</strong></td>
+                <td><strong>200万円</strong></td>
+                <td><strong>350万円</strong></td>
+                <td><strong>430万円</strong></td>
+              </tr>
+              <tr>
+                <th>制作範囲</th>
+                <td>LP 1ページ</td>
+                <td>LP ＋ サブ3ページ</td>
+                <td>LP ＋ サブ6ページ</td>
+                <td>ミニLP ＋ 総合LP（松相当）</td>
+              </tr>
+              <tr>
+                <th>修正ラウンド</th>
+                <td>最大2回</td>
+                <td>最大3回</td>
+                <td>無制限（軽微）</td>
+                <td>最大3回</td>
+              </tr>
+              <tr>
+                <th>運用・保守（M1〜M3）</th>
+                <td>オプション</td>
+                <td>オプション</td>
+                <td><span class="highlight-text">3ヶ月分含む</span></td>
+                <td>オプション</td>
+              </tr>
+              <tr>
+                <th>スチール写真</th>
+                <td>オプション</td>
+                <td>オプション</td>
+                <td><span class="highlight-text">含む</span></td>
+                <td>オプション</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+      <footer class="slide-footer">
+        <div class="presenter"></div>
+        <div class="page-number">08</div>
+      </footer>
     </div>
+  </div>
+  
 
     <!-- スライド09: 梅プラン詳細 -->
     <div class="slide-wrapper">
@@ -615,53 +881,161 @@
     </div>
 
     <!-- スライド11: 松プラン詳細 -->
-    <div class="slide-wrapper">
-        <div class="slide">
-            <header class="slide-top-header">
-                <div class="client-info">弁護士法人あいち刑事事件総合法律事務所東京支部 御中<br>在日韓国人向け法律相談LP制作企画案</div>
+<div class="slide-wrapper">
+    <div class="slide">
+      <header class="slide-top-header">
+        <div class="client-info">
+          弁護士法人あいち刑事事件総合法律事務所東京支部 御中<br>
+          在日韓国人向け法律相談LP制作企画案
+        </div>
+      </header>
+      <main class="slide-main-content">
+        <div class="slide-header">
+          <h1>🌲 松プラン (Premium) 詳細 - 350万円 (税別)</h1>
+        </div>
+  
+        <div class="plan-detail-grid">
+          <!-- 左カラム -->
+          <div class="plan-detail-card">
+            <h4>ページ構成</h4>
+            <ul>
+              <li>メインLP 1ページ + サブページ 6ページ</li>
+              <li>（竹プラン内容 + 事務所紹介／法差異専門分析／成功事例 等）</li>
+            </ul>
+            <h4>プレミアム特典</h4>
+            <ul>
+              <li><span class="highlight-text">スチール写真インタビュー 含む</span><br>
+                <small>プロフィール撮影 (5〜10カット)／テキストインタビュー (Q&A 10問)</small>
+              </li>
+              <li><span class="highlight-text">公開後3ヶ月間：M1〜M3 運用・保守一式を含む</span><br>
+                <small>（ライトメンテ／月1本コンテンツ／GA4・SCレポート＆改善提案）</small>
+              </li>
+            </ul>
+            <h4>修正ポリシー</h4>
+            <ul>
+              <li>制作期間中の<span class="highlight-text">軽微修正は無制限</span></li>
+              <li>構造変更（セクション追加等）は別途お見積り</li>
+            </ul>
+            <h4>更新方法・納品形式</h4>
+            <ul>
+              <li>静的HTML一式（korean-section.zip）を納品</li>
+              <li>公開後3ヶ月間は当社側で更新代行（M1〜M3相当）</li>
+            </ul>
+          </div>
+  
+          <!-- 右カラム -->
+          <div class="plan-detail-notes">
+            <h4>※追加特典・ご注意事項</h4>
+            <ul>
+              <!-- 追加特典 -->
+              <li>ドメイン取得・DNS設定代行</li>
+              <li>サーバーホスティング連携・SSL構築<br>
+                <small>(X社 VPS 1GB／SSD40GBプラン想定)</small>
+              </li>
+              <li>WordPress 初期構築（テーマ・プラグイン設定含む）</li>
+              <li>管理画面設定・操作ガイド提供</li>
+              <li>1年間のコア／プラグインアップデートサポート</li>
+              <hr>
+              <!-- 注意事項 -->
+              <li>サーバーはX社提供のVPS（1GB／SSD40GBプラン）を前提としています。</li>
+              <li>ホスティング費用は初年度のみ含みます。2年目以降は月額¥1,200×12か月を別途ご負担ください。</li>
+              <li>公開後3ヶ月間の保守・障害対応を含みます。4ヶ月目以降はM1〜M3プランへ移行となります。</li>
+              <li>アクセス増加時はVPSプランのスケールアップが必要です。</li>
+              <li>大幅なWordPressカスタマイズや新機能追加は別途お見積りとなります。</li>
+            </ul>
+          </div>
+        </div>
+  
+        <div class="note-remark" style="font-size:0.7rem; color:#64748b; margin-top:10px;">
+          <strong>※</strong> 韓国語翻訳込み・法律用語監修は貴事務所担当。コンテンツ構成により金額変動あり
+        </div>
+      </main>
+      <footer class="slide-footer">
+        <div class="presenter"></div>
+        <div class="page-number">11</div>
+      </footer>
+    </div>
+  </div>
+  
+    <!-- スライド12: 緊急＋総合LP 二刀流プラン（拡張版） -->
+<div class="slide-wrapper">
+    <div class="slide">
+        <header class="slide-top-header">
+            <div class="client-info">
+            弁護士法人あいち刑事事件総合法律事務所東京支部 御中<br>
+            在日韓国人向け法律相談LP制作企画案
+            </div>
             </header>
-            <main class="slide-main-content">
-                <div class="slide-header">
-                    <h1>🌲 松プラン (Premium) 詳細 - 350万円 (税別)</h1>
-                </div>
-                <div class="slide-content plan-detail-card">
-                    <h4>ページ構成</h4>
-                    <ul>
-                        <li>メインLP 1ページ + サブページ 6ページ</li>
-                        <li>（竹プラン内容 + 事務所紹介／法差異専門分析／成功事例 等）</li>
-                    </ul>
-                    
-                    <h4>プレミアム特典</h4>
-                    <ul>
-                        <li><span class="highlight-text">スチール写真インタビュー 含む</span><br><small>プロフィール撮影 (5〜10カット)／テキストインタビュー (Q&A 10問)</small></li>
-                        <li><span class="highlight-text">公開後3ヶ月間：M1〜M3 運用・保守一式を含む</span><br><small>（ライトメンテ／月1本コンテンツ／GA4・SCレポート＆改善提案）</small></li>
-                    </ul>
-                    
-                    <h4>修正ポリシー</h4>
-                    <ul>
-                        <li>制作期間中の<span class="highlight-text">軽微修正は無制限</span></li>
-                        <li>構造変更（セクション追加等）は別途お見積り</li>
-                    </ul>
-                    
-                    <h4>更新方法・納品形式</h4>
-                    <ul>
-                        <li>静的HTML一式（korean-section.zip）を納品</li>
-                        <li>公開後3ヶ月間は当社側で更新代行（M1〜M3相当）</li>
-                    </ul>
-                    
-                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; padding: 8px; margin-top: 10px; font-size: 0.7rem;">
-                        <strong>※</strong> 韓国語翻訳込み・法律用語監修は貴事務所担当・コンテンツ構成により金額変動あり
-                    </div>
-                </div>
-            </main>
+      <main class="slide-main-content">
+        <div class="slide-header">
+          <h1>緊急＋総合LP 二刀流プラン（拡張版）詳細 - 450万円 (税別)</h1>
+          <h2>即時対応層と検討層、両方を逃さない</h2>
+        </div>
+        <!-- slide-content: flex-column 유지 -->
+        <div class="slide-content">
+          <!-- 별도 래퍼: flex 영향 받지 않도록 style로 grid 강제 지정 -->
+          <div class="creative-grid-2"
+               style="flex:1; display:grid; grid-template-columns:1fr 1fr; gap:40px; margin-top:20px;">
+            
+            <!-- 좌측 컬럼 -->
+            <div class="grid-item">
+              <h3>1. 役割の棲み分け</h3>
+              <ul>
+                <li><strong>A：緊急性特化ミニLP</strong><br>
+                 赤系トーン／即時CTA誘導
+                </li>
+                <li><strong>B：総合サイト型LP（松プラン相当）</strong><br>
+                    情報充実・信頼構築／SEO強化
+                </li>
+              </ul>
+              <h3>2. 期待される効果</h3>
+              <ul>
+                <li>緊急ユーザー掘り起こし→電話CTR↑</li>
+                <li>ブランド信頼向上→滞在時間↑・問い合わせ質↑</li>
+                <li>広告費最適化→キーワード別LP振り分け</li>
+                <li>運用柔軟性→Aは随時コピー差し替え可</li>
+              </ul>
+              <h3>3. 実装＆予算感</h3>
+              <ul>
+                <li>スケジュール：A→1ヶ月／B→約2ヶ月</li>
+                <li>KPI：A→PV→CTR→電話クリック率、B→滞在時間・フォーム送信率</li>
+                <li>合計予算：約430万円（税別）</li>
+              </ul>
+            </div>
+            
+            <!-- 우측 컬럼 -->
+            <div class="grid-item">
+              <h3>4. LP基本構成紹介</h3>
+  
+              <h4 class="plan-detail-card h4">A：緊急性特化ミニLP</h4>
+              <ul>
+                <li>ファーストビュー：緊急性訴求ヘッドコピー＋赤系CTA</li>
+                <li>主訴セクション：逮捕中・呼び出しなどレッドゾーン訴求</li>
+                <li>即時行動：電話番号の常時固定表示／クリック誘導</li>
+                <li>フッター：緊急対応フロー＋簡易Q&A</li>
+              </ul>
+  
+              <h4 class="plan-detail-card h4">B：総合サイト型LP</h4>
+              <ul>
+                <li>ファーストビュー：信頼訴求ビジュアル＋CTA</li>
+                <li>取扱分野：刑事・交通・家事など詳細紹介</li>
+                <li>実績セクション：成功事例カルーセル</li>
+                <li>比較図版：韓日法差異／保釈制度比較</li>
+                <li>弁護士紹介：プロフィール＋写真インタビュー</li>
+                <li>下層リンク：FAQ／問い合わせフォーム／各下層</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </main>
             <footer class="slide-footer">
                 <div class="presenter"></div>
-                <div class="page-number">11</div>
+                <div class="page-number">12</div>
             </footer>
         </div>
-    </div>
-
-    <!-- スライド12: 追加オプション（プロモーション） -->
+        </div>
+  
+    <!-- スライド13: 追加オプション（プロモーション） -->
     <div class="slide-wrapper">
         <div class="slide">
             <header class="slide-top-header">
@@ -712,12 +1086,12 @@
             </main>
             <footer class="slide-footer">
                 <div class="presenter"></div>
-                <div class="page-number">12</div>
+                <div class="page-number">13</div>
             </footer>
         </div>
     </div>
 
-    <!-- スライド13: 追加オプション（コンテンツ/運用） -->
+    <!-- スライド14: 追加オプション（コンテンツ/運用） -->
     <div class="slide-wrapper">
         <div class="slide">
             <header class="slide-top-header">
@@ -774,12 +1148,12 @@
             </main>
             <footer class="slide-footer">
                 <div class="presenter"></div>
-                <div class="page-number">13</div>
+                <div class="page-number">14</div>
             </footer>
         </div>
     </div>
 
-    <!-- スライド14: 当社独自の提供価値 -->
+    <!-- スライド15: 当社独自の提供価値 -->
     <div class="slide-wrapper">
         <div class="slide">
             <header class="slide-top-header">
@@ -810,12 +1184,12 @@
             </main>
             <footer class="slide-footer">
                 <div class="presenter"></div>
-                <div class="page-number">14</div>
+                <div class="page-number">15</div>
             </footer>
         </div>
     </div>
 
-    <!-- スライド15: B2B/パートナーシップ戦略 -->
+    <!-- スライド16: B2B/パートナーシップ戦略 -->
     <div class="slide-wrapper">
         <div class="slide">
             <header class="slide-top-header">
@@ -847,12 +1221,12 @@
             </main>
             <footer class="slide-footer">
                 <div class="presenter"></div>
-                <div class="page-number">15</div>
+                <div class="page-number">16</div>
             </footer>
         </div>
     </div>
 
-    <!-- スライド16: 契約・運用条件 -->
+    <!-- スライド17: 契約・運用条件 -->
     <div class="slide-wrapper">
         <div class="slide">
             <header class="slide-top-header">
@@ -895,12 +1269,12 @@
             </main>
             <footer class="slide-footer">
                 <div class="presenter"></div>
-                <div class="page-number">16</div>
+                <div class="page-number">17</div>
             </footer>
         </div>
     </div>
 
-    <!-- スライド17: 結論 -->
+    <!-- スライド18: 結論 -->
     <div class="slide-wrapper">
         <div class="slide">
             <header class="slide-top-header">
@@ -921,7 +1295,7 @@
             </main>
             <footer class="slide-footer">
                 <div class="presenter"></div>
-                <div class="page-number">17</div>
+                <div class="page-number">18</div>
             </footer>
         </div>
     </div>
@@ -968,6 +1342,21 @@
         });
 
         showSlide(currentSlide);
+     
+  // 첫 슬라이드에서 presenter 블록을 복제해서
+  const credit = document
+    .querySelector('.slide-wrapper:first-of-type .slide-footer .presenter')
+    .cloneNode(true);
+
+  // 모든 slide-footer마다 빈 presenter 대신 붙여넣기
+  document.querySelectorAll('.slide-footer').forEach(footer => {
+    const existing = footer.querySelector('.presenter');
+    if (existing && existing.innerHTML.trim() === '') {
+      existing.replaceWith(credit.cloneNode(true));
+    }
+  });
+
+
     </script>
 
 </body>
