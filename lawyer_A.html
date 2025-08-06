@@ -182,31 +182,72 @@
     animation: emergency-pulse 3s infinite ease-in-out; /* 3초 동안 부드럽게 반복 */
     z-index: 0;
 }
-/* --- ▼ [추가] 긴급 신호 애니메이션 키프레임 ▼ --- */
-@keyframes emergency-pulse {
-    0% {
-        transform: translate(-50%, -50%) scale(0.8);
-        opacity: 0.5;
-    }
-    50% {
-        transform: translate(-50%, -50%) scale(1.2);
-        opacity: 0.8;
-    }
-    100% {
-        transform: translate(-50%, -50%) scale(0.8);
-        opacity: 0.5;
-    }
+/* Hero Section */
+.hero {
+    background: var(--gradient-slate);
+    color: var(--white);
+    padding: 180px 0 80px;
+    position: relative;
+    overflow: hidden;
 }
-/* --- ▲ [추가] --- */
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 70% 30%, rgba(245, 158, 11, 0.08) 0%, transparent 50%);
+}
+
+/* --- ▼ [수정] 긴급 신호 효과를 애니메이션 없이 고정 ▼ --- */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%; /* 범위를 약간 넓혀 자연스럽게 */
+    height: 120%;
+    background: radial-gradient(circle, rgba(220, 38, 38, 0.15) 0%, transparent 65%); /* 옅은 붉은색 그라데이션 고정 */
+    transform: translate(-50%, -50%); /* 중앙 정렬 */
+    z-index: 0;
+}
+/* --- ▲ [수정] --- */
 
 .hero-content {
     position: relative;
-    z-index: 1; /* ::after 요소보다 위에 위치하도록 z-index 조정 */
+    z-index: 1; 
     text-align: center;
     max-width: 900px;
     margin: 0 auto;
 }
-    
+
+/* --- 중략 --- */
+
+/* --- ▼ [수정] 메인 CTA 버튼에 애니메이션 대신 고정된 글로우 효과 적용 ▼ --- */
+.cta-primary {
+    background: var(--amber-500);
+    color: var(--slate-900);
+    padding: 18px 36px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    /* 고정된 글로우 효과로, 항상 빛나는 것처럼 보이게 함 */
+    box-shadow: 0 0 25px rgba(245, 158, 11, 0.5), var(--shadow-lg); 
+}
+/* --- ▲ [수정] --- */
+
+.cta-primary:hover {
+    background: var(--amber-400);
+    transform: translateY(-2px);
+    /* 호버 시 글로우 효과를 살짝 더 강하게 */
+    box-shadow: 0 0 30px rgba(245, 158, 11, 0.7), var(--shadow-lg);
+}
+
+/* @keyframes 블록들은 더 이상 필요 없으므로 삭제합니다. */
     </style>
 </head>
 <body>
